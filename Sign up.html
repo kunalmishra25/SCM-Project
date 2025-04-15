@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="signup.css">
+    <link rel="icon" type="image" href="Logo2.png.jpg">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-color: #ecebeb;
+        }
+        .container {
+            display: flex;
+            margin-top: 20px;
+            margin-left: 0px;
+        }
+        .c2 {
+            text-align: center;
+            position: absolute;
+            left: 550px;
+        }
+        .c2 h1 {
+            margin-top: 0;
+            font-size: 40px;
+        }
+        .submit {
+            filter: drop-shadow(1px 1px 2px black);
+        }
+        .c1 {
+            margin-top: -110px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .p1 p {
+            text-align: left;
+            font-size: 45px;
+            font-weight: 400;
+            margin-top: 130px;
+            margin-left: 5px;
+        }
+        .p2 p {
+            margin-left: 5px;
+            font-size: 27px;
+            font-weight: bold;
+            font-family: comic sans ms;
+        }
+        .c2 input {
+            margin: auto;
+            margin-top: 30px;
+            padding: 5px;
+            display: flex;
+            height: 35px;
+            width: 400px;
+            border-radius: 8px;
+            font-size: large;
+        }
+        .c2 button:hover {
+            background-color: orangered;
+        }
+        .c1 img {
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        button {
+            background-color: rgba(255, 68, 0, 0.873);
+            border: none;
+            margin: auto;
+            display: block;
+            width: 300px;
+            height: 40px;
+            padding: 5px;
+            border-radius: 10px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .sign-up-link {
+            text-align: center;
+            margin-right: 80px;
+        }
+        .sign-up-link p {
+            font-size: 20px;
+            margin-left: 100px;
+        }
+        .sign-up-link a {
+            color: blue;
+            font-weight: 600;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .p1 i {
+            font-size: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        input:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+        .valid {
+            border-color: green;
+        }
+        .invalid {
+            border-color: red;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .success {
+            color: green;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+<form action="signIn.html" method="post" id="advancedForm">
+    <div class="container">
+        <div class="c1" style="background-color:#f6f3b5; width:500px; height:117%; filter: drop-shadow(10px 10px 7px rgb(8, 8, 8));">
+            <div class="p1">
+                <p></p>
+            </div>
+            <div class="p2">
+                <p>Looks like<br>you're new here</p>
+            </div>
+            <img src="Logo2.png.jpg" width="350px" height="350px">
+        </div>
+        <div class="c2" style="background-color:#ecebeb; width:600px; height:600px;">
+            <h1>Sign Up <i class="fas fa-user"></i></h1>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <span id="usernameError" class="error"></span>
+            <input type="text" placeholder="E-mail" id="email" required>
+            <span id="emailError" class="error"></span>
+            <input type="text" placeholder="Phone Number" id="phone" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <span id="passwordError" class="error"></span>
+            <input type="password" id="confirmPassword" placeholder="Confirm password" required><br><br>
+            <button class="submit" type="submit">Sign Up</button>
+            <div class="sign-up-link">
+                <p>Already have an account? <a href="signIn.html">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+  const username = document.getElementById('username');
+  const usernameError = document.getElementById('usernameError');
+  const email = document.getElementById('email');
+  const emailError = document.getElementById('emailError');
+  const password = document.getElementById('password');
+  const passwordError = document.getElementById('passwordError');
+  const form = document.getElementById('advancedForm');
+  
+  username.addEventListener('input', validateUsername);
+  email.addEventListener('input', validateEmail);
+  password.addEventListener('input', validatePassword);
+
+  form.addEventListener('submit', function(event) {
+    if (!validateUsername() || !validateEmail() || !validatePassword()){
+      event.preventDefault();
+    }
+  });
+
+  function validateUsername() {
+    const value = username.value.trim();
+    const regex = /^[a-zA-Z0-9]{3,}$/;
+
+    if (!value) {
+      setError(username, usernameError, "Username is required!");
+      return false;
+    } else if (!regex.test(value)) {
+      setError(username, usernameError, "Username must be 3 characters long and alphanumeric");
+      return false;
+    } else {
+      setSuccess(username, usernameError);
+      return true;
+    }
+  }
+
+  function validateEmail() {
+    const value = email.value.trim();
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!value) {
+      setError(email, emailError, "Email is required!");
+      return false;
+    } else if (!regex.test(value)) {
+      setError(email, emailError, "Please enter a valid email address");
+      return false;
+    } else {
+      setSuccess(email, emailError);
+      return true;
+    }
+  }
+
+  function validatePassword() {
+    const value = password.value.trim();
+    const regex = /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}$/;
+
+      if (!value) {
+      setError(password, passwordError, "Password is required!");
+      return false;
+    } else if (!regex.test(value)) {
+      setError(password, passwordError, "Password must be at least 8 characters long and contain at least one special character, number, and one letter.");
+      return false;
+    } else {
+      setSuccess(password, passwordError);
+      return true;
+    }
+  }
+
+  function setError(input, errorElement, message) {
+    input.classList.add('invalid');
+    input.classList.remove('valid');
+    errorElement.textContent = message;
+  }
+
+  function setSuccess(input, errorElement) {
+    input.classList.add('valid');
+    input.classList.remove('invalid');
+    errorElement.textContent = '';
+  }
+  </script>
+  </body>
+  </html>

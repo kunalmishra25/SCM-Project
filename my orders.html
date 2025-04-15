@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bharat Store</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+header {
+    background:#eee98f;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.logo img{
+    width:100px;
+    height:100px;
+    position: absolute;
+    left: 0;
+    bottom:735px;
+}
+/*.search-container {
+    display:flex;
+    margin-top: 0px;
+    position: absolute;
+    left:120px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 200px;
+    height:25px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;}
+.search-container button {
+        padding:0px;
+        height:25px;
+        width:80px;
+        border: none;
+        background-color:#f44336;
+        border:black 2px;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+    
+button:hover {
+        background-color:orangered;} */   
+
+.nav-links {
+    list-style:none;
+    display: flex;
+}
+.signin img{
+    width: 30px;
+
+}
+
+.nav-links li {
+    margin: 0 15px;
+    color: black;
+}
+.nav-links li:hover{
+    background-color:transparent;
+    border-color:white;
+    border:2px solid white;
+    border-radius: 3px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+.container h2{
+    text-align: center;
+    margin-top: 0px;
+    font-size: 35px;
+}
+.container a{
+    text-decoration: none;
+    color: black;
+}
+
+.c1{
+    width:1250px;
+    border-radius:10px;
+    margin-top: 40px;
+    margin-left: 20px;
+    height: 300px;
+    background-color: #e6e6e6;
+}
+.c2{
+    width:1250px;
+    border-radius:10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 300px;
+    background-color: #e6e6e6;
+}
+.c3{
+    width:1250px;
+    border-radius:10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 300px;
+    background-color: #e6e6e6;
+}
+.c4{
+    width:1250px;
+    border-radius:10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 300px;
+    background-color: #e6e6e6;
+}
+.container img{
+    margin-top:30px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+.c1 img{
+    margin-top: 10px;
+}
+.c1 p{
+    margin-left: 20px;
+    font-size:25px;
+    font-weight: 600;
+}
+.c2 img{
+    margin-top: 10px;
+}
+.c2 p{
+    margin-left: 20px;
+    font-size:25px;
+    font-weight: 600;
+}
+.c3 img{
+    margin-top: 10px;
+}
+.c3 p{
+    margin-left: 20px;
+    font-size:25px;
+    font-weight: 600;
+}
+.c4 img{
+    margin-top: 10px;
+}
+.c4 p{
+    margin-left: 20px;
+    font-size:25px;
+    font-weight: 600;
+}
+.head1 p{
+    font-size: 15px;
+    position: absolute;
+    left: 240px;
+    top: 250px;
+}
+.head2 p{
+    font-size: 15px;
+    position: absolute;
+    left: 240px;
+    top: 580px;
+}
+.head3 p{
+    font-size: 15px;
+    position: absolute;
+    left: 240px;
+    top: 900px;
+}
+.head4 p{
+    font-size: 15px;
+    position: absolute;
+    left: 240px;
+    top: 1220px;
+}
+#below{
+    margin-top: 55px;
+    font-weight: 100;
+}
+.c1 button:hover{
+    color:red;
+}
+#below2{
+    margin-top: 55px;
+    font-weight: 100;
+}
+.c2 button:hover{
+    color:red;
+}
+#below3{
+    margin-top: 72px;
+    font-weight: 100;
+}
+.c3 button:hover{
+    color:red;
+}
+#below4{
+    margin-top: 55px;
+    font-weight: 100;
+}
+.c4 button:hover{
+    color:red;
+}
+#b1{
+    position: absolute;
+    top: 340px;
+    left: 260px;
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid;
+}
+#b2{
+    position: absolute;
+    top: 670px;
+    left: 260px;
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid;
+}
+
+#b3{
+    position: absolute;
+    top: 999px;
+    left: 260px;
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid;
+}
+
+#b4{
+    position: absolute;
+    top: 1310px;
+    left: 260px;
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid;
+}
+#order1{
+    position: absolute;
+    right:160px;
+    font-size:13px;
+    font-weight: 100;
+}
+#track1{
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 170px;
+    top: 200px;
+    width: 170px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px);
+    filter: drop-shadow(1px 1px 2px);
+    transition: 0.3s ease-in;
+}
+#track1:hover{
+    background-color:#eee98f;
+    color:black;
+}
+#track2{
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 170px;
+    top: 525px;
+    width: 170px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px);
+    filter: drop-shadow(1px 1px 2px);
+    transition: 0.3s ease-in;
+}
+#track2:hover{
+    background-color:#eee98f;
+    color:black;}
+#track3{
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 170px;
+    top: 840px;
+    width: 170px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px);
+    transition: 0.3s ease-in;
+}
+#track3:hover{
+    background-color:#eee98f;
+    color:black;
+}
+#track4{
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 170px;
+    top: 1160px;
+    width: 170px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px);
+    filter: drop-shadow(1px 1px 2px);
+    transition: 0.3s ease-in;
+}
+#track4:hover{
+    background-color:#eee98f;
+    color:black;}
+#replace{
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 170px;
+    top: 245px;
+    width: 170px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px);
+    background-color:;
+}
+#support1{
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 170px;
+    top: 290px;
+    width: 170px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px);
+}
+#support1:hover{
+    color: blue;
+}
+#support2{
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 170px;
+    top: 615px;
+    width: 170px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px);
+}
+#support2:hover{
+    color: blue;
+}
+#support3{
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 170px;
+    top: 885px;
+    width: 170px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px);
+}
+#support3:hover{
+    color: blue;
+}
+#support4{
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 170px;
+    top: 1205px;
+    width: 170px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px);
+}
+#support4:hover{
+ color: blue;
+}
+#replace2{
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 170px;
+    top: 570px;
+    width: 170px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px);
+    background-color:;
+}
+@media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .order-card {
+                width: 100%;
+            }
+
+            .order-card img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+/* Footer */
+footer {
+    background: #eee98f;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="bharat-store-about-page (2).html">About</a></li>
+                <li><a href="contact_us_1.html">Contact</a></li>
+            </ul>
+            
+            <div class="signin">
+                
+                <a href="cart.html"><img src="cart.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                <a href="Wishlist.html"><img src="fav.png" alt="wishlist" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                &nbsp;
+                
+            </div>
+        </nav>
+    </header>
+            <div class="container">
+                <h2>My Orders</h2>
+                <div class="c1">
+                    <button onclick="track()" id="track1">Track order</button>
+                    <button id="b1">View item</button>
+                    <button id="replace">Replace item</button>
+                    <button id="support1"><a href="contact_us_1.html">Get support</a></button>
+                    <p id="order1">Order #404-8520722-7400355</p>
+                    <p>Delivered Today</p>
+                   <div class="head1">
+                     <p>Perspectives in Indian History : <br>From the Origins to AD 1857</p>
+                     <p id="below">Replace item: May be possible through 9 December 2024</p>
+                     
+                    </div>
+                    <img src="book1.jpg" width="210px" height="240px">
+                </div>
+                <div class="c2">
+                    <p id="order1">Order #409-8520722-6400350</p>
+                    <button id="b2">View item</button>
+                    <button id="replace2">Replace item</button>
+                    <button onclick="track()" id="track2">Track order</button>
+                    <button id="support2"><a href="contact_us_1.html">Get support</a></button>
+                    <p>Delivered Monday</p>
+                    <div class="head2"> <p>GiTAGGED® Bastar Tribal Home Decorative Wooden Dancing Lady Art | <br> Teak Wood Finish - (19 * 38 * 4) L*H*W</p>
+                        <p id="below2">Replace item: May be possible through 7 December 2024</p></div>
+                <img src="art3.jpg" width="210px" height="240px"></div>
+                <div class="c3">
+                    <p id="order1">Order #414-8520725-7400385</p>
+                    <button id="b3">View item</button>
+                    <button onclick="track()" id="track3">Track order</button>
+                    <button id="support3"><a href="contact_us_1.html">Get support</a></button>
+                    <p>Delivered 13 November</p>
+                    <div class="head3"> <p>Khadi Natural Lavender Soap | Herbal Bathing Soap for Healthy Skin | <br> Natural Soap with Essential Oils | Soap for relieving stress | Suitable for All Skin Types|<br> Pack of 3 |125gm *3) (375gm)</p>
+                        <p id="below3">Replace item: May be possible through 25 November 2024</p></div>
+                <img src="skin2.jpg" width="210px" height="240px"></div>
+                <div class="c4">
+                    <p id="order1">Order #454-8527725-7400345</p>
+                    <button id="b4">View item</button>
+                    <button onclick="track()" id="track4">Track order</button>
+                    <button id="support4"><a href="contact_us_1.html">Get support</a></button>
+                    <p>Delivered 8 September</p>
+                    <div class="head4"> <p>KHADI NATURAL AYURVEDIC SANDALWOOD <br> KESAR MOISTURISER  (210 ml)</p>
+                        <p id="below4">Replace item: May be possible through 20 November 2024</p></div>
+                <img src="skin3.jpg" width="210px" height="240px"></div>
+
+                
+            </div>
+
+            <footer>
+                <table border="0" >
+                    <tr>
+                        <td>
+                            <img src="min.png" alt="Made in India" height="40%" width="45%" style="margin-left: -50px; margin-right: -80px;">
+                        </td>
+                        <td>
+                            <img src="Logo21.png" alt="tbs logo"  height="10%" width="45%" style="margin-left: -50px;">
+                        </td>
+                        <td  >
+                            <img src="vfl.png" alt="Vocal For Local"  height="120%" width="110%" >
+                        </td>
+        
+                    </tr>
+                </table>
+        
+                
+                <p style="align-content:bottom; background-color: #9c9a6c;padding: 20px; margin-bottom: -20px;">&copy; 2024 All rights reserved.</p>
+            </footer>
+    <script>
+        function track() {
+            alert("Product Already Delivered");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bharat Store</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+header {
+    background:#eee98f;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.logo img{
+    width:100px;
+    height:100px;
+    position: absolute;
+    left: 0;
+    bottom:735px;
+}
+/*.search-container {
+    display:flex;
+    margin-top: 0px;
+    position: absolute;
+    left:120px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 200px;
+    height:25px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;}
+.search-container button {
+        padding:0px;
+        height:25px;
+        width:80px;
+        border: none;
+        background-color:#f44336;
+        border:black 2px;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+    
+button:hover {
+        background-color:orangered;} */   
+
+.nav-links {
+    list-style:none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    color: black;
+}
+.nav-links li:hover{
+    background-color:transparent;
+    border-color:white;
+    border:2px solid white;
+    border-radius: 3px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+.signin a:hover{
+    color: black;
+}
+
+.signin a {
+    color: black;
+    font-weight: 700;
+}
+.signin{
+    text-decoration: none;
+}
+.signin img{
+    width: 30px;
+
+}
+.c1{
+    width: 700px;
+    height: 600px;
+    position: relative;
+    margin-left: 60px;
+    margin-top: 80px;
+    border-radius: 12px;
+    background-color: #e6e6e6;
+}
+.c1 h2{
+    position: absolute;
+    left: 260px;
+}
+.radio{
+    position: absolute;
+    top: 378px;
+    left: 45px;
+    cursor: pointer;
+}
+#save{
+    position: absolute;
+    top: 500px;
+    left:300px;
+    width: 100px;
+    height: 40px;
+    font-size: 17px;
+    border: 0.5px solid;
+    border-radius: 8px;
+    background-color:rgb(0, 145, 255);
+    color: white;
+    filter: drop-shadow(0px 0.5px 0.5px rgba(0, 0, 0, 0.383));
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+#save:hover{
+    background-color:rgb(0, 85, 255);
+    color: white;
+}
+#location{
+    position: absolute;
+    width: 190px;
+    height: 32px;
+    font-size: 15px;
+    top: 380px;
+    left: 420px;
+    border: 0.5px;
+    border-radius: 5px;
+    color: white;
+    background-color:rgb(0, 0, 255);
+    cursor: pointer;
+}
+#location:hover{
+    background-color:red;
+}
+.c1 h2{
+    margin-left: 8px;
+    margin-top: 5px;
+}
+#firstname{
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    font-size: 15px;
+    padding: 5px;
+    border: 0.5px solid;
+    border-radius: 4px;
+    width: 290px;
+    height: 40px;
+
+}
+#lastname{
+    position: absolute;
+    top: 70px;
+    left: 370px;
+    font-size: 15px;
+    padding: 5px;
+    border: 0.5px solid;
+    border-radius: 4px;
+    width: 290px;
+    height: 40px;
+
+}
+#phone{
+    position: absolute;
+    top: 150px;
+    left: 40px;
+    font-size: 15px;
+    padding: 5px;
+    border: 0.5px solid;
+    border-radius: 4px;
+    width: 290px;
+    height: 40px;
+
+}
+#email{
+    position: absolute;
+    top: 150px;
+    left: 370px;
+    font-size: 15px;
+    padding: 5px;
+    border: 0.5px solid;
+    border-radius: 4px;
+    width: 290px;
+    height: 40px;
+}
+#address{
+    position: absolute;
+    top: 230px;
+    left: 40px;
+    font-size: 15px;
+    padding: 5px;
+    border: 0.5px solid;
+    border-radius: 4px;
+    width: 290px;
+    height: 40px;
+
+}
+#pincode{
+    position: absolute;
+    top: 230px;
+    left: 370px;
+    font-size: 15px;
+    padding: 5px;
+    border: 0.5px solid;
+    border-radius: 4px;
+    width: 290px;
+    height: 40px;
+
+}
+#city{
+    position: absolute;
+    top: 310px;
+    left: 40px;
+    font-size: 15px;
+    padding: 5px;
+    border: 0.5px solid;
+    border-radius: 4px;
+    width: 290px;
+    height: 40px;
+
+}
+#alternate{
+    position: absolute;
+    top: 310px;
+    left: 370px;
+    font-size: 15px;
+    padding: 5px;
+    border: 0.5px solid;
+    border-radius: 4px;
+    width: 290px;
+    height: 40px;
+
+}
+
+
+
+.c2{
+    background-color:#e6e6e6;
+    border-radius: 12px;
+    width: 500px;
+    height: 430px;
+    position: absolute;
+    right: 80px;
+    top: 220px;
+    
+}
+.c2 h2{
+    margin-left: 20px;
+}
+#img1{
+    width: 90px;
+    height: 90px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#img2{
+    width: 110px;
+    height: 100px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#img3{
+    width: 90px;
+    height: 90px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+#img4{
+    width: 90px;
+    height: 90px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+#cardnumber{
+    width: 170px;
+    height: 32px;
+    font-size:15px;
+    padding: 4px;
+    position: absolute;
+    top: 240px;
+    right: 320px;
+    border-radius: 5px;
+    border: 0.5px solid;
+
+}
+#acc{
+    width: 250px;
+    height: 32px;
+    font-size:15px;
+    padding: 4px;
+    position: absolute;
+    top: 170px;
+    right: 240px;
+    border-radius: 5px;
+    border: 0.5px solid;
+
+}
+#cvv{
+    width: 150px;
+    height: 32px;
+    font-size:15px;
+    padding: 4px;
+    position: absolute;
+    top: 170px;
+    right: 60px;
+    border-radius: 5px;
+    border: 0.5px solid;
+
+}
+.date{
+    width: 170px;
+    font-size:15px;
+    padding: 4px;
+    position: absolute;
+    top: 300px;
+    right: 320px;
+}
+#b1{
+    width: 150px;
+    height: 32px;
+    font-size:18px;
+    padding: 4px;
+    position: absolute;
+    top: 380px;
+    right: 180px;
+    border-radius: 8px;
+    border: 0.5px solid;
+    filter: drop-shadow(0px 0.5px 0.5px);
+    background-color: rgb(0, 145, 255);
+    color: white;
+    transition: 0.2s ease-in;
+
+}
+#b1:hover{
+    background-color:rgb(0, 85, 255);
+}
+
+/* Footer */
+footer {
+    background: #eee98f;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 190px;
+    
+}
+
+
+/* Responsive */
+@media only screen and (min-width: 600px) {
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="bharat-store-about-page (2).html">About</a></li>
+                <li><a href="contact_us_1.html">Contact</a></li>
+            </ul>
+            
+            <div class="signin">
+                
+                <a href="cart.html"><img src="cart.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                <a href="Wishlist.html"><img src="fav.png" alt="wishlist" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                &nbsp;
+                
+            </div>
+        </nav>
+    </header>
+    <div class="c1">
+        <form action="">
+        <h2>Billing Address</h2>
+        <input id="firstname" type="text" placeholder="First Name" required>
+    <input id="lastname" type="text" placeholder="Last Name"required>
+    <input id="phone" type="text" placeholder="Mobile Number" required>
+    <input id="email" type="text" placeholder="Email Address" required>
+    <input id="address" type="text" placeholder="Address(Street and Area)" required>
+    <input id="pincode" type="text" placeholder="Pin Code" required>
+    <input id="city" type="text" placeholder="City/District/Town" required>
+    <input id="alternate" type="text" placeholder="Alternate Mobile Number(Optional)">
+    <button id="location"><i class="fa-solid fa-location-crosshairs" style="color: #ffffff;"></i> Use my current location</button>
+    <button id="save">Save</button>
+    </form>
+    
+    <div class="radio">
+        <label>Address Type: &nbsp;</label><br>
+    <input  type="radio" name="r1" value="Home">Home
+    <input  type="radio" name="r1" value="Work">Work</div>
+</div>
+            <div class="c2"> 
+                <h2>Payment Details</h2>
+                <img id="img1" src="visa.png"> 
+                <img id="img2" src="card.png">
+                <img id="img3" src="paypal.png">
+                <img id="img4" src="rupay.png">
+                <div class="date">
+                <label>Card Expiry:</label><br>
+                <input type="date" name="dob"></div>
+                <div class="details">
+                <input type="text" id="cardnumber" placeholder="Card Number" required>
+                <input type="text" id="acc" placeholder="Card Holder Name" required>
+                <input type="text" id="cvv" placeholder="CVV" required>
+                <button id="b1">Pay</button>
+            </div>
+
+            </div>
+            <footer>
+                <table border="0" >
+                    <tr>
+                        <td>
+                            <img src="min.png" alt="Made in India" height="40%" width="45%" style="margin-left: -50px; margin-right: -80px;">
+                        </td>
+                        <td>
+                            <img src="Logo21.png" alt="tbs logo"  height="10%" width="45%" style="margin-left: -50px;">
+                        </td>
+                        <td  >
+                            <img src="vfl.png" alt="Vocal For Local"  height="120%" width="110%" >
+                        </td>
+        
+                    </tr>
+                </table>
+        
+                
+                <p style="align-content:bottom; background-color: #9c9a6c;padding: 20px; margin-bottom: -20px;">&copy; 2024 All rights reserved.</p>
+            </footer>
+
+
+
+
+
+
+
+            
+</body>
+</html>
+
+
+
+
