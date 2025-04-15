@@ -1,5 +1,5 @@
 Online Shopping Website
-A modern, responsive e-commerce platform built with HTML, CSS, and vanilla JavaScript. This project aims to provide users with a seamless online shopping experience without relying on frameworks or libraries.
+A modern, responsive e-commerce platform built with HTML, CSS, and JavaScript. This project aims to provide users with a seamless online shopping experience without relying on frameworks or libraries.
 
 Features:
 User authentication with local storage,
