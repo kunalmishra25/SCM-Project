@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bharat Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #e6e6e6;
+}
+header {
+    background:#eee98f;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+
+.nav-links {
+    list-style:none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    color: black;
+}
+.nav-links li:hover{
+    background-color:transparent;
+    border-color:white;
+    border:2px solid white;
+    border-radius: 3px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+.bag-heading p{
+    font-size:x-large;
+    font-weight: bolder;
+    margin-left:50px ;
+    margin-top: 15px;
+}
+.bag-heading small{
+    margin-left: 52px;
+    
+}
+.signin a{
+    text-decoration: none;
+}
+.signin img{
+    width: 30px;
+
+}
+
+/* Cart  */
+
+.cart-main{
+    width: 820px;
+    height: 520px;
+    border-radius:20px;
+    margin-top:10px;
+    margin-left: 54px;
+    display: flex;
+    margin-bottom: 300px;
+    filter:drop-shadow(2px 2px 2px grey);
+    background-color:white;
+}
+.cart-main table{
+    width: 800px;
+    align-items: center;
+    font-size: larger;
+    position: absolute;
+    top: 0px;
+    left:10px;
+    
+}
+.cart-main input{
+    width: 35px;
+    height: 30px;
+    font-size:15px;
+    border:1px solid black;
+    border-radius: 5px;
+    margin-left: 140px;
+    padding: 2px;
+}
+th:first-child{
+    text-align: left;
+    position: absolute;
+    left: 60px;
+}
+th:last-child{
+    position: absolute;
+    right: 40px;
+}
+table img{
+    width: 200px;
+    height: 200px;
+}
+.bag-heading i{
+    margin-left:5px;
+}
+.cart2{
+    background-color:white;
+    border-radius: 20px;
+    width: 340px;
+    height: 515px;
+    position: absolute;
+    top: 144px;
+    left: 70%;
+}
+
+.cart2 h2{
+    margin: 20px;
+    margin-left: 10px;
+}
+.cart2 input{
+    width: 250px;
+    height: 45px;
+    border-radius: 20px;
+    border:2px solid;
+    background-color:#e6e6e6;
+    padding:8px;
+    font-size: large;
+    margin-left: 42px;
+}
+.cart2 button{
+    cursor: pointer;
+    width: 250px;
+    height: 35px;
+    margin-top: 15px;
+    margin-left: 42px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-size: larger;
+
+}
+.cart3{
+    background-color: #eee98f;
+    width: 320px;
+    height: 260px;
+    margin-top: 40px;
+    margin-left:10px;
+    border-radius: 20px;
+}
+.cart3 h3{
+    font: size 80px;
+    margin-left: 20px;
+    position: absolute;
+    top: 260px;
+}
+.cart3 table{
+    width: 400px;
+    font-size: larger;
+    position: absolute;
+    top: 310px;
+    left: 20px;
+}
+.cart3 button{
+    cursor: pointer;
+    margin-top: 210px;
+    margin-left: 36px;
+    height: 35px;
+}
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: large;
+}
+#Checkout a{
+    text-decoration: none;
+    color: white;
+}
+/* Footer */
+footer {
+    background: #eee98f;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+@media only screen and (min-width: 600px) {
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            
+            
+            <ul class="nav-links">
+                <li><a href="Home Page.html">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="bharat-store-about-page (2).html">About</a></li>
+                <li><a href="contact_us_1.html">Contact</a></li>
+            </ul>
+            <div class="signin">
+                 
+                <a href="cart.html"><img src="cart.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                <a href="Wishlist.html"><img src="fav.png" alt="wishlist" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                &nbsp;
+                
+            </div>
+        </nav>
+    </header>
+    <div class="bag-heading">
+    <p>Shopping Cart<i class="fa-solid fa-cart-shopping"></i></p>
+    <small><b>2 items</b> in your Cart</small>
+</div>
+      <div class="cart-main">
+            <table>
+                <tr>
+                    <th>Products</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+                 <tr>
+                    <td ><br><img src="book3.jpg"></td>
+                    <td><input type="number" value="1"></td>
+                    <td>₹300/-</td>
+                    
+                 </tr>
+                 <tr>
+                    <td ><br><img src="art3.jpg"></td>
+                    <td><input type="number" value="1"></td>
+                   <div class="pricetag">
+
+                    <td>₹2500/-</td></div>
+                 </tr>
+                 </table>
+                </div>
+      <div class="cart2">
+        <h2>Coupon Code</h2>
+        <input type="text" placeholder="Enter Coupon Code" required>
+        <button type="button">Apply</button><br><br>
+       <hr>
+<div class="cart3">
+        <h3>Cart Total</h3>
+      <table>
+        <tr>
+            <td>Subtotal:</td>
+            <td>₹2800/-</td>
+        </tr>
+        <tr>
+            <td>Sales Tax:</td>
+            <td>₹280/-</td>
+        </tr>
+        <tr>
+            <td>Discount:</td>
+            <td>-₹80/-</td>
+        </tr>
+         <tr>
+            <td>Total:</td>
+            <td>₹3000</td>
+         </tr>
+        </table>
+          <button id="Checkout" type="button"><a href="payment.html">Checkout</a></button>
+      </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 All rights reserved.</p>
+    </footer>
+</body>
+</html>
