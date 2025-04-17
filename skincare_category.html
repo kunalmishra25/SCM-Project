@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        .category-side {
+            background-color: khaki;
+            height: 2000px;
+            width: 265px;
+            font-size: 90%;
+        }
+
+        .heading {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .category-list {
+            position: absolute;
+            top: 50px;
+        }
+
+        .product-side {
+            position: absolute;
+            
+            margin-left: 200px;
+            padding-top: 20px;
+
+        }
+
+        .p-s-r-1 {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .p-s-r-1-c-1,
+        .p-s-r-1-c-2,
+        .p-s-r-1-c-3 {
+            border: none;
+            width: 330px;
+            height: 480px;
+            position: relative;
+            box-shadow: 1px 1px 4px 1px grey;
+            transition: transform 0.3s ease;
+        }
+        .p-s-r-1-c-1,
+        .p-s-r-1-c-2,
+        .p-s-r-1-c-3 img{
+            cursor: pointer;
+        }
+
+        .p-s-r-1-c-1:hover,
+        .p-s-r-1-c-2:hover,
+        .p-s-r-1-c-3:hover {
+            transform: scale(1.05);
+            box-shadow: 2px 2px 5px grey;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 400px;
+        }
+
+        .product-name {
+            text-align: center;
+            font-weight: bolder;
+            font-size: 100%;
+        }
+
+        .rating {
+            display: flex;
+            position: absolute;
+            left: 140px;
+        }
+
+        .price-section {
+            display: flex;
+            position: absolute;
+            top: 450px;
+            left: 80px;
+            gap: 10px;
+        }
+
+        .offer-price {
+            font-weight: bolder;
+        }
+
+        .offer {
+            color: orange;
+            position: absolute;
+            left: 120px;
+            white-space: nowrap;
+        }
+
+        .original-price {
+            color: grey;
+            position: absolute;
+            left: 55px;
+        }
+
+        #list {
+            line-height: 150%;
+        }
+
+        li {
+            position: relative;
+            right: 20px;
+        }
+        #list a{
+            text-decoration: none;
+           
+         color: black;
+        }
+        header {
+    background:#eee98f;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.logo img{
+    width:100px;
+    height:100px;
+    position: absolute;
+    left: 0;
+    bottom:735px;
+}
+.search-container {
+    display:flex;
+    margin-top: 0px;
+    margin-left: 300px;
+    position: absolute;
+    left:120px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 500px;
+    height:30px;
+    background-color: #eee98f;
+    border-bottom: 0.5px solid;
+    border-top: 0px solid;
+    border-right: 0px solid;
+    border-left: 0px solid;
+    outline: none;}
+.search-container button {
+        padding:0px;
+        height:25px;
+        width:80px;
+        border: none;
+        background-color:#f44336;
+        border:black 2px;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+    
+button:hover {
+        background-color:orangered;}    
+
+.nav-links {
+    list-style:none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    color: black;
+}
+.nav-links li:hover{
+    background-color:transparent;
+    border-color:white;
+    border:2px solid white;
+    border-radius: 3px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+.signin{
+ margin-top: -25px;   
+}
+.signin a:hover{
+    color: black;
+}
+
+.signin a {
+    color: black;
+    font-weight: 700;
+}
+footer {
+    background: #eee98f;
+    color: black;
+    bottom: 0;
+    padding: 20px 0;
+    margin-top: 2040px;
+    
+}
+footer h5 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+footer p, footer a {
+    font-size: 20px;
+    color: rgb(49, 42, 28);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer .social-media a {
+    margin-right: 10px;
+    color: rgb(49, 42, 28);
+    text-decoration: none;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    flex: 1;
+    max-width: 33.3333%;
+    padding: 15px;
+}
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .hidden{
+        display: none;
+    }
+}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<script src="bootstrap.bundle.min.js" ></script>
+
+<body>
+    <header>
+        <nav>
+            
+            
+            <ul class="nav-links">
+                <li><a href="Home Page.html">Home</a></li>
+                <div class="dropdown">
+                 <a class=" dropdown-toggle" data-bs-toggle="dropdown"> Shop</a>
+                    <ul class="dropdown-menu">
+                        <li><a href = "clothing_category.html" class="dropdown-item">Clothings</a></li>
+                    <li><a href = "skincare_category.html" class="dropdown-item">Skincare</a></li>
+                    <li><a href = "category-books.html" class="dropdown-item">Books</a></li>
+                    <li><a href = "cookware.html" class="dropdown-item">Cookware</a></li>
+                    <li><a href = "category-grocery.html" class="dropdown-item">Grocery</a></li>
+                    <li><a href = "perfumes_category.html" class="dropdown-item">Perfumes</a></li>
+                    <li><a href = "gi_handicraft.html" class="dropdown-item">Local Handicrafts</a></li>
+                    </ul>
+                </div>
+                
+                
+                <li><a href="bharat-store-about-page (2).html">&nbsp; &nbsp; &nbsp; About</a></li>
+                <li><a href="contact_us_1.html">Contact</a></li>
+            </ul>
+            <div class="search-container" >
+                <input type="text"  id="SearchBox" class="search-bar dropdown-toggle" data-bs-toggle="dropdown" placeholder = "Search for Categories.....">
+                <ul id = "items" class="dropdown-menu">
+                    <li><a href = "clothing_category.html" class="dropdown-item">Clothings</a></li>
+                    <li><a href = "skincare_category.html" class="dropdown-item">Skincare</a></li>
+                    <li><a href = "category-books.html" class="dropdown-item">Books</a></li>
+                    <li><a href = "cookware.html" class="dropdown-item">Cookware</a></li>
+                    <li><a href = "category-grocery.html" class="dropdown-item">Grocery</a></li>
+                    <li><a href = "perfumes_category.html" class="dropdown-item">Perfumes</a></li>
+                    <li><a href = "gi_handicraft.html" class="dropdown-item">Local Handicrafts</a></li>
+                </ul>
+            </div>
+            <div class="signin">
+                
+                <a href="cart.html"><img src="cart.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                <a href="Wishlist.html"><img src="fav.png" alt="wishlist" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                
+                
+                    <a class=" dropdown-toggle" data-bs-toggle="dropdown"><img src="profile.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="my orders.html" class="dropdown-item">My Orders</a></li>
+                            <li><a href="Home Page3.html" class="dropdown-item">Logout</a></li>
+                        
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- <div class="category-side">
+        <div class="head">Categories</div>
+        <div id="list">
+            <ul>
+                <li><a href="#">Clothing</a>
+                    <ul>
+                        <li><a href="#">Nehru Jacket</a></li>
+                        <li><a href="#">Ajrakh kurta</a></li>
+                        <li><a href="#">Banarasi Sherwani</a></li>
+                        <li><a href="#">Pathani Suit</a></li>
+                        <li><a href="#">Kullu Wool Jacket</a></li>
+                        <li><a href="#">Khadi Kurta</a></li>
+                        <li><a href="#">Chikankari Kurti</a></li>
+                        <li><a href="#">Ikart Jacket</a></li>
+                        <li><a href="#">Kashmiri Kaftans</a></li>
+                        <li><a href="#">Khadi Skirts</a></li>
+                        <li><a href="#">Saree</a></li>
+                        <li><a href="#">Kalamkari Dress</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Perfumes</a>
+                    <ul>
+                        <li><a href="#">Forest Rain</a></li>
+                        <li><a href="#">Cosmic Dance</a></li>
+                        <li><a href="#">First Rain</a></li>
+                        <li><a href="#">Rain Kissed Rose</a></li>
+                        <li><a href="#">Into The Woods - Eau de Parfum</a></li>
+                        <li><a href="#">Festive Gift Box</a></li>
+                        <li><a href="#">Mitti Attar</a></li>
+                        <li><a href="#">Saffron Attar</a></li>
+                        <li><a href="#">Noble Spirit Attar</a></li>
+                        <li><a href="#">Zaffar Royal Attar</a></li>
+                        <li><a href="#">Tawakul Royal Attar</a></li>
+                        <li><a href="#">Assorted Luxury Attar - Gift Set</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Cookware</a>
+                    <ul>
+                        <li><a href="#">Masala Dani | Spice Box</a></li>
+                        <li><a href="#">Frypan (Frying Pan)</a></li>
+                        <li><a href="#">Water Dispenser</a></li>
+                        <li><a href="#">Dosa Tawa</a></li>
+                        <li><a href="#">Patili / Degchi</a></li>
+                        <li><a href="#">Tawa</a></li>
+                        <li><a href="#">Thaali Set</a></li>
+                        <li><a href="#">Water Bottle</a></li>
+                        <li><a href="#">Cutlery Gift Box</a></li>
+                        <li><a href="#">Clay Handi</a></li>
+                        <li><a href="#">Clay Kadai</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Books</a>
+                    <ul>
+                        <li><a href="#">Autobiography-Mahatma Gandhi</a></li>
+                        <li><a href="#">The Hidden Hindu</a></li>
+                        <li><a href="#">Mahagatha</a></li>
+                        <li><a href="#">Nationalism</a></li>
+                        <li><a href="#">Ocean of Churn</a></li>
+                        <li><a href="#">You Only Live Once</a></li>
+                        <li><a href="#">One Day Life Will Change</a></li>
+                        <li><a href="#">Samsara-The Valley Of The Gods</a></li>
+                        <li><a href="#">Why I Killed Gandhi</a></li>
+                        <li><a href="#">The Satvic Revolution</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Grocery</a>
+                    <ul>
+                        <li><a href="#">Atta</a></li>
+                        <li><a href="#">Besan</a></li>
+                        <li><a href="#">Bhujia</a></li>
+                        <li><a href="#">Honey</a></li>
+                        <li><a href="#">Refined Oil</a></li>
+                        <li><a href="#">Salt</a></li>
+                        <li><a href="#">SoyaBean</a></li>
+                        <li><a href="#">ToothPaste</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">SkinCare</a>
+                    <ul>
+                        <li><a href="#">Body Oil</a></li>
+                        <li><a href="#">Kajal</a></li>
+                        <li><a href="#">Facial Moisturiser</a></li>
+                        <li><a href="#">Facial Cleansing Balm</a></li>
+                        <li><a href="#">Lip Butter</a></li>
+                        <li><a href="#">Kansa Hair Comb</a></li>
+                        <li><a href="#">Hand and Foot Cream</a></li>
+                        <li><a href="#">Facial Kit</a></li>
+                        <li><a href="#">Body Wash</a></li>
+                        <li><a href="#">Deodrants</a></li>
+                        <li><a href="#">Facial Mask</a></li>
+                        <li><a href="#">Hair Oil</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Local Artwork</a>
+                    <ul>
+                        <li><a href="#">Wooden Dancing Lady</a></li>
+                        <li><a href="#">Painting</a></li>
+                        <li><a href="#">Glass Lamp</a></li>
+                        <li><a href="#">Jali Murra Cut Owl</a></li>
+                        <li><a href="#">Konark Stone Figure</a></li>
+                        <li><a href="#">Kalash / Vase</a></li>
+                        <li><a href="#">Vishnu Avatar</a></li>
+                        <li><a href="#">Devi Chau Mask</a></li>
+                        <li><a href="#">xyz</a></li>
+                        <li><a href="#">xyz</a></li>
+                        <li><a href="#">xyz</a></li>
+                        <li><a href="#">xyz</a></li>
+
+                    </ul>
+        </div>
+    </div> -->
+    <div class="product-side">
+        <!-- Row 1 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1_c0cf7719-895d-4fcf-9cfb-d30e696d1e52.jpg?v=1717143419&width=800" alt="image1" onclick = "goToPage1()"></div>
+                <div class="product-name">Kumkumadi Oil</div>
+                <div class="rating">
+                    <div class="rating-stars">4.5⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1499</div>
+                    <div class="original-price"><strike>₹1910</strike></div>
+                    <div class="offer">(21%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1k_aa135454-a5c1-40db-9f70-c511973c84c4.jpg?v=1730480856&width=800" alt="image1"onclick = "goToPage2()"></div>
+                <div class="product-name">Illuminate Kohl Kajal - Matte Black</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(21)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹650</div>
+                    <div class="original-price"><strike>₹799</strike></div>
+                    <div class="offer">(20%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1_7d9d1e09-1b43-41e7-aa4e-615210f7eb96.jpg?v=1694682894&width=800" alt="image1" onclick = "goToPage3()"></div>
+                <div class="product-name">Hydrating Hand Wash</div>
+                <div class="rating">
+                    <div class="rating-stars">3.9⭐</div>
+                    <div class="rating-count">(6)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹470</div>
+                    <div class="original-price"><strike>₹750</strike></div>
+                    <div class="offer">(37%) OFF</div>
+                </div>
+            </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1st.jpg?v=1717143259&width=800" alt="image1" onclick = "goToPage4()"></div>
+                <div class="product-name">Gheesutrā Hand and Foot Cream</div>
+                <div class="rating">
+                    <div class="rating-stars">4.1⭐</div>
+                    <div class="rating-count">(18)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹750</div>
+                    <div class="original-price"><strike>₹900</strike></div>
+                    <div class="offer">(17%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1_cf669b49-d5c1-4377-a9a9-ed5c920a9e31.png?v=1694682519&width=800" alt="image1" onclick = "goToPage5()"></div>
+                <div class="product-name">Hydrating Cleanser - Fine Line</div>
+                <div class="rating">
+                    <div class="rating-stars">4.6⭐</div>
+                    <div class="rating-count">(30)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1199</div>
+                    <div class="original-price"><strike>₹1499</strike></div>
+                    <div class="offer">(20%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1_14fd7611-0874-494c-b1b2-8326eb81e58c.jpg?v=1694682571&width=800" alt="image1" onclick = "goToPage6()"></div>
+                <div class="product-name">Anti Age Serum</div>
+                <div class="rating">
+                    <div class="rating-stars">3.8⭐</div>
+                    <div class="rating-count">(4)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹2199</div>
+                    <div class="original-price"><strike>₹3450</strike></div>
+                    <div class="offer">(36%) OFF</div>
+                </div>
+            </div>
+        </div>
+        <!-- Row 3 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1_6fc3c18c-22ed-4037-9763-964a6d372a58.jpg?v=1717143183&width=800" alt="image1"></div>
+                <div class="product-name">Soothing Body Mist</div>
+                <div class="rating">
+                    <div class="rating-stars">4.5⭐</div>
+                    <div class="rating-count">(27)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹899</div>
+                    <div class="original-price"><strike>₹1080</strike></div>
+                    <div class="offer">(17%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1_811183aa-9083-4873-a12f-3162041d9119.png?v=1717143275&width=800" alt="image1"></div>
+                <div class="product-name">Shea Butter Body Scrub</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(16)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹599</div>
+                    <div class="original-price"><strike>₹850</strike></div>
+                    <div class="offer">(29%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1_df557d84-c70d-4f52-930c-a70eabf24e0e.png?v=1696180201&width=800" alt="image1"></div>
+                <div class="product-name">Moisturizing Mask</div>
+                <div class="rating">
+                    <div class="rating-stars">4.2⭐</div>
+                    <div class="rating-count">(16)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1990</div>
+                    <div class="original-price"><strike>₹2450</strike></div>
+                    <div class="offer">(18%) OFF</div>
+                </div>
+            </div>
+        </div>
+        <!-- Row 4 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/saffron_1.jpg?v=1722532089&width=800" alt="image1"></div>
+                <div class="product-name">Gheesutrā Saffron Lip Butter</div>
+                <div class="rating">
+                    <div class="rating-stars">4.3⭐</div>
+                    <div class="rating-count">(20)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹399</div>
+                    <div class="original-price"><strike>₹525</strike></div>
+                    <div class="offer">(24%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1_aef34180-a148-43e5-a3fd-7bf23ccc440b.jpg?v=1694682645&width=800" alt="image1"></div>
+                <div class="product-name">De-Stressing Body Wash</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(22)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1240</div>
+                    <div class="original-price"><strike>₹1595</strike></div>
+                    <div class="offer">(22%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="https://www.shankara.in/cdn/shop/files/1_8f660763-db1a-4420-8dbf-ca44186048ce.jpg?v=1694682596&width=800" alt="image1"></div>
+                <div class="product-name">Anti-Age Eye Cream</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(24)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹2670</div>
+                    <div class="original-price"><strike>₹3250</strike></div>
+                    <div class="offer">(18%) OFF</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer >
+        <table border="0" >
+            <tr>
+                <td>
+                    <img src="min.png" alt="Made in India" height="40%" width="45%" style=" margin-right: -80px;">
+                </td>
+                <td>
+                    <img src="Logo21.png" alt="tbs logo"  height="10%" width="45%" >
+                </td>
+                <td  >
+                    <img src="vfl.png" alt="Vocal For Local"  height="120%" width="110%" >
+                </td>
+
+            </tr>
+        </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" >
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="Home Page.html" >Home</a></li>
+                        <li><a href="bharat-store-about-page (2).html" >About Us</a></li>
+                        <li><a href="#" >Shop</a></li>
+                        <li><a href="contact_us_1.html" >Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>The Bharat Store</h5>
+                    <p>Empowering Local Artisans,
+                        <br> Celebrating Craftsmanship and Handicrafts.</p>
+                </div>
+                
+                <div class="col-md-4" >
+                    <h5>Contact Us</h5>
+                    <p>Email: thebharatstore24@gmail.com</p>
+                    <p>Phone: +91 87568 XXXXX</p>
+                    <div class="social-media">
+                        <a href="#" class=" me-2">Facebook</a>
+                        <a href="#" class=" me-2">Instagram</a>
+                        <a href="#" >Twitter</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <center>
+        <p style="align-content:bottom;  background-color: #9c9a6c;padding: 20px; margin-bottom: -20px;">&copy; 2024 All rights reserved.</p>
+        </center>
+    </footer>
+</body>
+<script>
+    function f1()
+    {
+        alert("Product Added To Cart")
+    }
+    
+    const searchBox = document.getElementById('SearchBox');
+    const itemList = document.getElementById('items');
+    const items = document.getElementsByTagName('li');
+
+    searchBox.addEventListener('input',()=>{
+        const value = searchBox.value.toLowerCase();
+
+        for (const item of items){
+            const text = item.textContent.toLowerCase();
+
+            if (text.includes(value)){
+                item.style.display = "";
+            }
+            else{
+                item.style.display = 'none';
+                removeEventListener=items
+            }
+
+        }
+    })
+    function goToPage1(){
+        window.location.href = "kumkumadi_oil.html"
+    }
+    function goToPage2(){
+        window.location.href = "kajal.html"
+    }
+    function goToPage3(){
+        window.location.href = "hand_wash.html"
+    }
+    function goToPage4(){
+        window.location.href = "hand&foot_cream.html"
+    }
+    function goToPage5(){
+        window.location.href = "hydrating_cleanser.html"
+    }
+    function goToPage6(){
+        window.location.href = "anti_age_serum.html"
+    }
+
+</script>
+
+</html>
