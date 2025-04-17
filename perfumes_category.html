@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        .category-side {
+            background-color: khaki;
+            height: 2000px;
+            width: 265px;
+            font-size: 90%;
+        }
+
+        .heading {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .category-list {
+            position: absolute;
+            top: 50px;
+        }
+
+        .product-side {
+            position: absolute;
+            
+            margin-left: 200px;
+            padding-top: 20px;
+
+        }
+
+        .p-s-r-1 {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .p-s-r-1-c-1,
+        .p-s-r-1-c-2,
+        .p-s-r-1-c-3 {
+            border: none;
+            width: 330px;
+            height: 480px;
+            position: relative;
+            box-shadow: 1px 1px 1px 1px grey;
+            transition: transform 0.3s ease;
+        }
+
+        .p-s-r-1-c-1:hover,
+        .p-s-r-1-c-2:hover,
+        .p-s-r-1-c-3:hover {
+            transform: scale(1.05);
+            box-shadow: 2px 2px 5px grey;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 400px;
+        }
+
+        .product-name {
+            text-align: center;
+            font-weight: bolder;
+            font-size: 100%;
+        }
+
+        .rating {
+            display: flex;
+            position: absolute;
+            left: 140px;
+        }
+
+        .price-section {
+            display: flex;
+            position: absolute;
+            top: 450px;
+            left: 80px;
+            gap: 10px;
+        }
+
+        .offer-price {
+            font-weight: bolder;
+        }
+
+        .offer {
+            color: orange;
+            position: absolute;
+            left: 120px;
+            white-space: nowrap;
+        }
+
+        .original-price {
+            color: grey;
+            position: absolute;
+            left: 55px;
+        }
+
+        #list {
+            line-height: 150%;
+        }
+
+        li {
+            position: relative;
+            right: 20px;
+        }
+        #list a{
+            text-decoration: none;
+           
+         color: black;
+        }
+        header {
+    background:#eee98f;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.logo img{
+    width:100px;
+    height:100px;
+    position: absolute;
+    left: 0;
+    bottom:735px;
+}
+.search-container {
+    display:flex;
+    margin-top: 0px;
+    margin-left: 300px;
+    position: absolute;
+    left:120px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 500px;
+    height:30px;
+    background-color: #eee98f;
+    border-bottom: 0.5px solid;
+    border-top: 0px solid;
+    border-right: 0px solid;
+    border-left: 0px solid;
+    outline: none;}
+.search-container button {
+        padding:0px;
+        height:25px;
+        width:80px;
+        border: none;
+        background-color:#f44336;
+        border:black 2px;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+    
+button:hover {
+        background-color:orangered;}    
+
+.nav-links {
+    list-style:none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    color: black;
+}
+.nav-links li:hover{
+    background-color:transparent;
+    border-color:white;
+    border:2px solid white;
+    border-radius: 3px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+.signin{
+ margin-top: -25px;   
+}
+.signin a:hover{
+    color: black;
+}
+
+.signin a {
+    color: black;
+    font-weight: 700;
+}
+footer {
+    background: #eee98f;
+    color: black;
+    bottom: 0;
+    padding: 20px 0;
+    margin-top: 2040px;
+    
+}
+footer h5 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+footer p, footer a {
+    font-size: 20px;
+    color: rgb(49, 42, 28);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer .social-media a {
+    margin-right: 10px;
+    color: rgb(49, 42, 28);
+    text-decoration: none;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    flex: 1;
+    max-width: 33.3333%;
+    padding: 15px;
+}
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .hidden{
+        display: none;
+    }
+}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<script src="bootstrap.bundle.min.js" ></script>
+
+<body>
+    <header>
+        <nav>
+            
+            
+            <ul class="nav-links">
+                <li><a href="Home Page.html">Home</a></li>
+                <div class="dropdown">
+                 <a class=" dropdown-toggle" data-bs-toggle="dropdown"> Shop</a>
+                    <ul class="dropdown-menu">
+                        <li><a href = "clothing_category.html" class="dropdown-item">Clothings</a></li>
+                    <li><a href = "skincare_category.html" class="dropdown-item">Skincare</a></li>
+                    <li><a href = "category-books.html" class="dropdown-item">Books</a></li>
+                    <li><a href = "cookware.html" class="dropdown-item">Cookware</a></li>
+                    <li><a href = "category-grocery.html" class="dropdown-item">Grocery</a></li>
+                    <li><a href = "perfumes_category.html" class="dropdown-item">Perfumes</a></li>
+                    <li><a href = "gi_handicraft.html" class="dropdown-item">Local Handicrafts</a></li>
+                    </ul>
+                </div>
+                
+                
+                <li><a href="bharat-store-about-page (2).html">&nbsp; &nbsp; &nbsp; About</a></li>
+                <li><a href="contact_us_1.html">Contact</a></li>
+            </ul>
+            <div class="search-container" >
+                <input type="text"  id="SearchBox" class="search-bar dropdown-toggle" data-bs-toggle="dropdown" placeholder = "Search for Categories.....">
+                <ul id = "items" class="dropdown-menu">
+                    <li><a href = "clothing_category.html" class="dropdown-item">Clothings</a></li>
+                    <li><a href = "skincare_category.html" class="dropdown-item">Skincare</a></li>
+                    <li><a href = "category-books.html" class="dropdown-item">Books</a></li>
+                    <li><a href = "cookware.html" class="dropdown-item">Cookware</a></li>
+                    <li><a href = "category-grocery.html" class="dropdown-item">Grocery</a></li>
+                    <li><a href = "perfumes_category.html" class="dropdown-item">Perfumes</a></li>
+                    <li><a href = "gi_handicraft.html" class="dropdown-item">Local Handicrafts</a></li>
+                </ul>
+            </div>
+            <div class="signin">
+                
+                <a href="cart.html"><img src="cart.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                <a href="Wishlist.html"><img src="fav.png" alt="wishlist" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                
+                
+                    <a class=" dropdown-toggle" data-bs-toggle="dropdown"><img src="profile.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="my orders.html" class="dropdown-item">My Orders</a></li>
+                            <li><a href="Home Page3.html" class="dropdown-item">Logout</a></li>
+                        
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- <div class="category-side">
+        <div class="head">Categories</div>
+        <div id="list">
+            <ul>
+                <li><a href="#">Clothing</a>
+                    <ul>
+                        <li><a href="#">Nehru Jacket</a></li>
+                        <li><a href="#">Ajrakh kurta</a></li>
+                        <li><a href="#">Banarasi Sherwani</a></li>
+                        <li><a href="#">Pathani Suit</a></li>
+                        <li><a href="#">Kullu Wool Jacket</a></li>
+                        <li><a href="#">Khadi Kurta</a></li>
+                        <li><a href="#">Chikankari Kurti</a></li>
+                        <li><a href="#">Ikart Jacket</a></li>
+                        <li><a href="#">Kashmiri Kaftans</a></li>
+                        <li><a href="#">Khadi Skirts</a></li>
+                        <li><a href="#">Saree</a></li>
+                        <li><a href="#">Kalamkari Dress</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Perfumes</a>
+                    <ul>
+                        <li><a href="#">Forest Rain</a></li>
+                        <li><a href="#">Cosmic Dance</a></li>
+                        <li><a href="#">First Rain</a></li>
+                        <li><a href="#">Rain Kissed Rose</a></li>
+                        <li><a href="#">Into The Woods - Eau de Parfum</a></li>
+                        <li><a href="#">Festive Gift Box</a></li>
+                        <li><a href="#">Mitti Attar</a></li>
+                        <li><a href="#">Saffron Attar</a></li>
+                        <li><a href="#">Noble Spirit Attar</a></li>
+                        <li><a href="#">Zaffar Royal Attar</a></li>
+                        <li><a href="#">Tawakul Royal Attar</a></li>
+                        <li><a href="#">Assorted Luxury Attar - Gift Set</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Cookware</a>
+                    <ul>
+                        <li><a href="#">Masala Dani | Spice Box</a></li>
+                        <li><a href="#">Frypan (Frying Pan)</a></li>
+                        <li><a href="#">Water Dispenser</a></li>
+                        <li><a href="#">Dosa Tawa</a></li>
+                        <li><a href="#">Patili / Degchi</a></li>
+                        <li><a href="#">Tawa</a></li>
+                        <li><a href="#">Thaali Set</a></li>
+                        <li><a href="#">Water Bottle</a></li>
+                        <li><a href="#">Cutlery Gift Box</a></li>
+                        <li><a href="#">Clay Handi</a></li>
+                        <li><a href="#">Clay Kadai</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Books</a>
+                    <ul>
+                        <li><a href="#">Autobiography-Mahatma Gandhi</a></li>
+                        <li><a href="#">The Hidden Hindu</a></li>
+                        <li><a href="#">Mahagatha</a></li>
+                        <li><a href="#">Nationalism</a></li>
+                        <li><a href="#">Ocean of Churn</a></li>
+                        <li><a href="#">You Only Live Once</a></li>
+                        <li><a href="#">One Day Life Will Change</a></li>
+                        <li><a href="#">Samsara-The Valley Of The Gods</a></li>
+                        <li><a href="#">Why I Killed Gandhi</a></li>
+                        <li><a href="#">The Satvic Revolution</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Grocery</a>
+                    <ul>
+                        <li><a href="#">Atta</a></li>
+                        <li><a href="#">Besan</a></li>
+                        <li><a href="#">Bhujia</a></li>
+                        <li><a href="#">Honey</a></li>
+                        <li><a href="#">Refined Oil</a></li>
+                        <li><a href="#">Salt</a></li>
+                        <li><a href="#">SoyaBean</a></li>
+                        <li><a href="#">ToothPaste</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">SkinCare</a>
+                    <ul>
+                        <li><a href="#">Body Oil</a></li>
+                        <li><a href="#">Kajal</a></li>
+                        <li><a href="#">Facial Moisturiser</a></li>
+                        <li><a href="#">Facial Cleansing Balm</a></li>
+                        <li><a href="#">Lip Butter</a></li>
+                        <li><a href="#">Kansa Hair Comb</a></li>
+                        <li><a href="#">Hand and Foot Cream</a></li>
+                        <li><a href="#">Facial Kit</a></li>
+                        <li><a href="#">Body Wash</a></li>
+                        <li><a href="#">Deodrants</a></li>
+                        <li><a href="#">Facial Mask</a></li>
+                        <li><a href="#">Hair Oil</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Local Artwork</a>
+                    <ul>
+                        <li><a href="#">Wooden Dancing Lady</a></li>
+                        <li><a href="#">Painting</a></li>
+                        <li><a href="#">Glass Lamp</a></li>
+                        <li><a href="#">Jali Murra Cut Owl</a></li>
+                        <li><a href="#">Konark Stone Figure</a></li>
+                        <li><a href="#">Kalash / Vase</a></li>
+                        <li><a href="#">Vishnu Avatar</a></li>
+                        <li><a href="#">Devi Chau Mask</a></li>
+                        <li><a href="#">xyz</a></li>
+                        <li><a href="#">xyz</a></li>
+                        <li><a href="#">xyz</a></li>
+                        <li><a href="#">xyz</a></li>
+
+                    </ul>
+        </div>
+    </div> -->
+    <div class="product-side">
+        <!-- Row 1 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="https://isakfragrances.com/cdn/shop/products/WISH4101_bead1ebc-c15a-4f88-bf8c-01961a170a4f.jpg?v=1697282911&width=1000" alt="image1"></div>
+                <div class="product-name">Into The Woods - Eau de Parfum</div>
+                <div class="rating">
+                    <div class="rating-stars">4.8⭐</div>
+                    <div class="rating-count">(18)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹3199</div>
+                    <div class="original-price"><strike>₹3599</strike></div>
+                    <div class="offer">(11%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="https://www.raahiparfums.com/cdn/shop/files/MH6A2535-5.jpg?v=1715146228&width=713" alt="image1"></div>
+                <div class="product-name">Mitti Attar | Authentic Indian Attar </div>
+                <div class="rating">
+                    <div class="rating-stars">4.2⭐</div>
+                    <div class="rating-count">(14)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1276</div>
+                    <div class="original-price"><strike>₹1600</strike></div>
+                    <div class="offer">(20%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="https://static.wixstatic.com/media/19fe93_0a62715dc10949f3955556a4ac981bc2~mv2.jpg/v1/fill/w_625,h_625,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/19fe93_0a62715dc10949f3955556a4ac981bc2~mv2.jpg" alt="image1"></div>
+                <div class="product-name">Saffron Attar ( Kashmir Kesar Attar )</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1199</div>
+                    <div class="original-price"><strike>₹1499</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="https://kyomfragrances.com/cdn/shop/files/21.1.png?v=1725417553&width=823" alt="image1"></div>
+                <div class="product-name">Noble Spirit Attar Perfume</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹599</div>
+                    <div class="original-price"><strike>₹749</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="https://www.adilqadri.com/cdn/shop/files/EMP06133_b67cb9b4-1d9f-45a5-a129-ffb07ff1aef1.jpg?v=1731338255&width=800" alt="image1"></div>
+                <div class="product-name">Zafar Royal Attar Perfume</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2499</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="https://isakfragrances.com/cdn/shop/files/Forest_Rain_50_ml.png?v=1725363970&width=1000"></div>
+
+                     
+                <div class="product-name">Forest Rain Perfume</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹2450</div>
+                    <div class="original-price"><strike>₹2990</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+        </div>
+        <!-- Row 3 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="https://isakfragrances.com/cdn/shop/files/Firefly20240201154944.png?v=1706782846&width=1000" alt="image1"></div>
+                <div class="product-name">Cosmic Dance</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹2899</div>
+                    <div class="original-price"><strike>₹3250</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="https://isakfragrances.com/cdn/shop/files/WhatsApp_Image_2024-06-11_at_5.35.34_PM.jpg?v=1718171062&width=1000" alt="image1"></div>
+                <div class="product-name">First Rain</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹2780</div>
+                    <div class="original-price"><strike>₹3250</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="https://isakfragrances.com/cdn/shop/files/WISH2050.jpg?v=1699094242&width=1000" alt="image1"></div>
+                <div class="product-name">Rain Kissed Rose Perfume</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹2900</div>
+                    <div class="original-price"><strike>₹3280</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+        </div>
+        <!-- Row 4 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="https://www.adilqadri.com/cdn/shop/files/WhatsAppImage2024-11-14at4.52.20PM.jpg?v=1731583440&width=800" alt="image1"></div>
+                <div class="product-name">Tawakkul Royal Attar</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2499</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="https://isakfragrances.com/cdn/shop/files/Attars_Gift_Box.png?v=1725099520&width=1000" alt="image1"></div>
+                <div class="product-name">Attars Festive Gift Box</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹4599</div>
+                    <div class="original-price"><strike>₹4999</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="https://www.adilqadri.com/cdn/shop/files/6PCS_Combo.jpg?v=1726827164&width=800" alt="image1"></div>
+                <div class="product-name">Assorted Luxury Attar Perfume Gift Set</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1499</div>
+                    <div class="original-price"><strike>₹2999</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer >
+        <table border="0" >
+            <tr>
+                <td>
+                    <img src="min.png" alt="Made in India" height="40%" width="45%" style=" margin-right: -80px;">
+                </td>
+                <td>
+                    <img src="Logo21.png" alt="tbs logo"  height="10%" width="45%" >
+                </td>
+                <td  >
+                    <img src="vfl.png" alt="Vocal For Local"  height="120%" width="110%" >
+                </td>
+
+            </tr>
+        </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" >
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="Home Page.html" >Home</a></li>
+                        <li><a href="bharat-store-about-page (2).html" >About Us</a></li>
+                        <li><a href="#" >Shop</a></li>
+                        <li><a href="contact_us_1.html" >Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>The Bharat Store</h5>
+                    <p>Empowering Local Artisans,
+                        <br> Celebrating Craftsmanship and Handicrafts.</p>
+                </div>
+                
+                <div class="col-md-4" >
+                    <h5>Contact Us</h5>
+                    <p>Email: thebharatstore24@gmail.com</p>
+                    <p>Phone: +91 87568 XXXXX</p>
+                    <div class="social-media">
+                        <a href="#" class=" me-2">Facebook</a>
+                        <a href="#" class=" me-2">Instagram</a>
+                        <a href="#" >Twitter</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <center>
+        <p style="align-content:bottom;  background-color: #9c9a6c;padding: 20px; margin-bottom: -20px;">&copy; 2024 All rights reserved.</p>
+        </center>
+    </footer>
+</body>
+<script>
+    function f1()
+    {
+        alert("Product Added To Cart")
+    }
+    
+    const searchBox = document.getElementById('SearchBox');
+    const itemList = document.getElementById('items');
+    const items = document.getElementsByTagName('li');
+
+    searchBox.addEventListener('input',()=>{
+        const value = searchBox.value.toLowerCase();
+
+        for (const item of items){
+            const text = item.textContent.toLowerCase();
+
+            if (text.includes(value)){
+                item.style.display = "";
+            }
+            else{
+                item.style.display = 'none';
+                removeEventListener=items
+            }
+
+        }
+    })
+
+</script>
+
+</html>
