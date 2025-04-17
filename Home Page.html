@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bharat Store</title>
+    
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+header {
+    background:#eee98f;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.logo img{
+    width:100px;
+    height:100px;
+    position: absolute;
+    left: 0;
+    bottom:735px;
+}
+.search-container {
+    display:flex;
+    margin-top: 0px;
+    margin-left: 300px;
+    position: absolute;
+    left:120px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 500px;
+    height:30px;
+    background-color: #eee98f;
+    border-bottom: 0.5px solid;
+    border-top: 0px solid;
+    border-right: 0px solid;
+    border-left: 0px solid;
+    outline: none;}
+.search-container button {
+        padding:0px;
+        height:25px;
+        width:80px;
+        border: none;
+        background-color:#f44336;
+        border:black 2px;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+    
+button:hover {
+        background-color:orangered;}    
+
+.nav-links {
+    list-style:none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    color: black;
+}
+.nav-links li:hover{
+    background-color:transparent;
+    border-color:white;
+    border:2px solid white;
+    border-radius: 3px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+.signin{
+ margin-top: -25px;   
+}
+.signin a:hover{
+    color: black;
+}
+
+.signin a {
+    color: black;
+    font-weight: 700;
+}
+
+
+.hero {
+                                                                     
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: -25px;
+}
+.hero img{
+    width: 210vh;
+    max-width: 100%;
+    
+
+}
+
+
+
+
+
+
+
+/* Product Section */
+.products {
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.products h2 {
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    height:300px
+}
+
+.product-card h3 {
+    margin: 15px 0;
+}
+
+.product-card p {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.product-card button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background: #d32f2f;
+}
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.feature {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #eee98f;
+    color: black;
+    
+    padding: 20px 0;
+    margin-top: 30px;
+    
+}
+footer h5 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+footer p, footer a {
+    font-size: 20px;
+    color: rgb(49, 42, 28);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer .social-media a {
+    margin-right: 10px;
+    color: rgb(49, 42, 28);
+    text-decoration: none;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    flex: 1;
+    max-width: 33.3333%;
+    padding: 15px;
+}
+.text-center {
+    text-align: center;
+}
+.slider{
+            position: relative;
+            overflow: hidden;
+            margin: auto;
+            
+        }
+        .slides{
+            display: flex;
+            transition: transform 0.5s ease-in ;   
+        }
+        .slide{
+            min-width: 100%; 
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .hidden{
+        display: none;
+    }
+}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<script src="bootstrap.bundle.min.js" ></script>
+<body>
+    <header>
+        <nav>
+            
+            
+            <ul class="nav-links">
+                <a href="#">Home&nbsp;&nbsp;</a>
+                <div class="dropdown">
+                 <a class=" dropdown-toggle" data-bs-toggle="dropdown"> &nbsp; &nbsp;Shop</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="clothing_category.html" class="dropdown-item">Clothings</a></li>
+                        <li><a href="skincare_category.html" class="dropdown-item">Skincare</a></li>
+                        <li><a href="category-books.html" class="dropdown-item">Books</a></li>
+                        <li><a href="cookware.html" class="dropdown-item">Cookware</a></li>
+                        <li><a href="category-grocery.html" class="dropdown-item">Grocery</a></li>
+                        <li><a href="perfumes_category.html" class="dropdown-item">Perfumes</a></li>
+                        <li><a href="gi_handicraft.html" class="dropdown-item">Local Handicrafts</a></li>
+                    </ul>
+                </div>
+                
+                
+                <a href="bharat-store-about-page (2).html">&nbsp; &nbsp;&nbsp;&nbsp;About&nbsp;&nbsp;</a>
+                <a href="contact_us_1.html">&nbsp;&nbsp;Contact</a>
+            </ul>
+            <div class="search-container" >
+                <input type="text"  id="SearchBox" class="search-bar dropdown-toggle" data-bs-toggle="dropdown" placeholder = "Search for Categories.....">
+                <ul id = "items" class="dropdown-menu">
+                    <li><a href = "clothing_category.html" class="dropdown-item">Clothings</a></li>
+                    <li><a href = "skincare_category.html" class="dropdown-item">Skincare</a></li>
+                    <li><a href = "category-books.html" class="dropdown-item">Books</a></li>
+                    <li><a href = "cookware.html" class="dropdown-item">Cookware</a></li>
+                    <li><a href = "category-grocery.html" class="dropdown-item">Grocery</a></li>
+                    <li><a href = "perfumes_category.html" class="dropdown-item">Perfumes</a></li>
+                    <li><a href = "gi_handicraft.html" class="dropdown-item">Local Handicrafts</a></li>
+                </ul>
+            </div>
+            <div class="signin">
+                &nbsp;&nbsp;
+                <a href="cart.html"><img src="cart.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                &nbsp;&nbsp;
+                <a href="Wishlist.html"><img src="fav.png" alt="wishlist" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                &nbsp;&nbsp;
+                
+                    <a class=" dropdown-toggle" data-bs-toggle="dropdown"><img src="profile.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="my orders.html" class="dropdown-item">My Orders</a></li>
+                            <li><a href="Home Page3.html" class="dropdown-item">Logout</a></li>
+                        
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <br>
+    <section class="hero">
+        <div class="hero-content">
+            <body>
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="banner1.png"></div>
+                        <div class="slide"><a href="gi_handicraft.html"><img src="banner2.png"></a></div>
+                        <div class="slide"><img src="banner3.png"></div>
+            
+                    </div>
+                </div>
+            
+            
+        </div>
+    </section>
+
+    <section class="products">
+        <h2>Local Handicrafts</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="art1.jpg" alt="Product 1">
+                <h3>Moradabad's Brass Elephant</h3>
+                <p>₹7000/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="art2.jpg" alt="Product 2">
+                <h3>Madhubani Painting
+                </h3>
+                <p>₹3700/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="art3.jpg" alt="Product 3">
+                <h3>Bastar Wooden Crafts</h3>
+                <p>₹2500</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section class="products">
+        <h2>Clothings</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="saree1.webp" alt="Product 1" style="height: 400px">
+                <h3>Queen Kanjeevaram Saree</h3>
+                <p>₹8299/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="dhotikurta1.jpg" alt="Product 2"style="height: 400px">
+                <h3>Silk Dhoti Kurta</h3>
+                <p>₹1999/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="saree2.jpg" alt="Product 3" style="height: 400px">
+                <h3>Silk Banarasi Saree</h3>
+                <p>₹7699/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+   
+    
+    <section class="products">
+        <h2>Skincare</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="skin1.jpg" alt="Product 1">
+                <h3>Khadi Shikakai Shampoo</h3>
+                <p>₹220/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="skin2.jpg" alt="Product 2">
+                <h3>Khadi Lavander soap </h3>
+                <p>₹150/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="skin3.jpg" alt="Product 3">
+                <h3>Khadi Kesar Moisturizer</h3>
+                <p>₹210</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section class="products">
+        <h2>Kitchenware</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="cook1.webp" alt="Product 1">
+                <h3>P-Tal - Copper Bottle</h3>
+                <p>₹999/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="cook2.jpg" alt="Product 2">
+                <h3> Swadeshi Blessing - Clay Pot
+                </h3>
+                <p>₹799/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="cook3.webp" alt="Product 3">
+                <h3>P-Tal - Spice Rack</h3>
+                <p>₹1299</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section class="products">
+        <h2>Books</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="book1.jpg" alt="Product 1">
+                <h3>Prespectives in Indian History</h3>
+                <p>₹350/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="book2.jpg" alt="Product 2">
+                <h3>Shree Ramcharitmanas
+                </h3>
+                <p>₹500/-</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="book3.jpg" alt="Product 3">
+                <h3>An Introduction To Indian Philosophy</h3>
+                <p>₹300</p>
+                <button onclick="f1()">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <h2>Why Shop With Us?</h2>
+        <div class="feature">
+            <h3>Quality Assurance</h3>
+            <p>We ensure that each product meets stringent quality standards.</p>
+        </div>
+        <div class="feature">
+            <h3>Support Local Artisans</h3>
+            <p>Your purchase helps promote and support local craftsmanship.</p>
+        </div>
+        <div class="feature">
+            <h3>Sustainable Practices</h3>
+            <p>We promote eco-friendly products and practices.</p>
+        </div>
+    </section>
+    <footer >
+        <table border="0" >
+            <tr>
+                <td>
+                    <img src="min.png" alt="Made in India" height="40%" width="45%" style=" margin-right: -80px;">
+                </td>
+                <td>
+                    <img src="Logo21.png" alt="tbs logo"  height="10%" width="45%" >
+                </td>
+                <td  >
+                    <img src="vfl.png" alt="Vocal For Local"  height="120%" width="110%" >
+                </td>
+
+            </tr>
+        </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" >
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="Home Page.html" >Home</a></li>
+                        <li><a href="bharat-store-about-page (2).html" >About Us</a></li>
+                        <li><a href="#" >Shop</a></li>
+                        <li><a href="contact_us_1.html" >Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>The Bharat Store</h5>
+                    <p>Empowering Local Artisans,
+                        <br> Celebrating Craftsmanship and Handicrafts.</p>
+                </div>
+                
+                <div class="col-md-4" >
+                    <h5>Contact Us</h5>
+                    <p>Email: thebharatstore24@gmail.com</p>
+                    <p>Phone: +91 87568 XXXXX</p>
+                    <div class="social-media">
+                        <a href="#" class=" me-2">Facebook</a>
+                        <a href="#" class=" me-2">Instagram</a>
+                        <a href="#" >Twitter</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <center>
+        <p style="align-content:bottom;  background-color: #9c9a6c;padding: 20px; margin-bottom: -20px;">&copy; 2024 All rights reserved.</p>
+        </center>
+    </footer>
+</body>
+<script>
+    function f1()
+    {
+        alert("Product Added To Cart")
+    }
+    
+    const searchBox = document.getElementById('SearchBox');
+    const itemList = document.getElementById('items');
+    const items = document.getElementsByTagName('li');
+
+    searchBox.addEventListener('input',()=>{
+        const value = searchBox.value.toLowerCase();
+
+        for (const item of items){
+            const text = item.textContent.toLowerCase();
+
+            if (text.includes(value)){
+                item.style.display = "";
+            }
+            else{
+                item.style.display = 'none';
+                removeEventListener=items
+            }
+
+        }
+    })
+    const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+
+        function show_slides(index){
+            const offset = -index*100;
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+        }
+        function next_slide(){
+            currentIndex = (currentIndex+1)%slides.length;
+            show_slides(currentIndex);
+        }
+        setInterval(next_slide,2000);
+
+</script>
+</html>
