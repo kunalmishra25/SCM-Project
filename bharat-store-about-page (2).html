@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharat Store - About Us</title>
+  <style>
+            header {
+    background:#eee98f;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+        }
+        nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.logo img{
+    width:100px;
+    height:100px;
+    position: absolute;
+    left: 0;
+    bottom:735px;
+}
+/*.search-container {
+    display:flex;
+    margin-top: 0px;
+    position: absolute;
+    left:120px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 200px;
+    height:25px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;}
+.search-container button {
+        padding:0px;
+        height:25px;
+        width:80px;
+        border: none;
+        background-color:#f44336;
+        border:black 2px;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+    
+button:hover {
+        background-color:orangered;} */   
+
+.nav-links {
+    list-style:none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    color: black;
+}
+.nav-links li:hover{
+    background-color:transparent;
+    border-color:white;
+    border:2px solid white;
+    border-radius: 3px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+.signin a:hover{
+    color: black;
+}
+.signin img{
+    width: 30px;
+
+}
+
+.signin a {
+    color: black;
+    font-weight: 700;
+}
+    body, h1, h2, p, ul, img {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .hero {
+      background-color: #e4de8e;
+      padding: 100px 0;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 22px;
+      color: #666;
+      font-style: italic;
+    }
+
+    .about-section {
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+      animation: slideInLeft 1s ease-in-out;
+    }
+
+    .about-section-image {
+      flex: 1;
+      margin-right: 40px;
+    }
+
+    .about-section-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .about-section-content {
+      flex: 1;
+    }
+
+    .about-section h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .about-section h2:after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color:khaki
+    }
+
+    .about-section p {
+      margin-bottom: 30px;
+    }
+
+    .mission-section {
+      background-color: #f4f4f4;
+      padding: 80px 0;
+      animation: slideInRight 1s ease-in-out;
+    }
+
+    .mission-section h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .mission-section h2:after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: khaki
+    }
+
+    .mission-list {
+      list-style-type: none;
+      margin-left: 0;
+    }
+
+    .mission-list li {
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .mission-list li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: khaki;
+      font-size: 24px;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+        
+        
+        <ul class="nav-links">
+            <li><a href="Home Page.html">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="bharat-store-about-page (2).html">About</a></li>
+            <li><a href="contact_us_1.html">Contact</a></li>
+        </ul>
+        
+        <div class="signin">
+            
+            <a href="cart.html"><img src="cart.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+            <a href="Wishlist.html"><img src="fav.png" alt="wishlist" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+            &nbsp;
+        </div>
+    </nav>
+</header>
+  <div class="container">
+    <div class="hero">
+      <h1>The Bharat Store</h1>
+      <p>Celebrating the rich heritage and craftsmanship of India</p>
+    </div>
+
+    <div class="about-section">
+      <div class="about-section-image">
+        <img src="https://picsum.photos/id/1/800/600" alt="Bharat Store Products">
+      </div>
+      <div class="about-section-content">
+        <h2>Our Story</h2>
+        <p>Bharat Store is a labor of love, born out of a deep appreciation for the incredible artistry and rich cultural heritage of India. We are on a mission to showcase the remarkable handmade products created by talented Indian artisans and craftspeople, and to promote sustainable economic development in local communities.</p>
+        <p>Our curated collection features a diverse range of products, from intricate textiles and vibrant home decor to unique jewelry and handcrafted furniture. Each item has a story to tell, a testament to the skill, creativity, and traditions that have been passed down through generations.</p>
+      </div>
+    </div>
+
+    <div class="mission-section">
+      <h2>Our Mission</h2>
+      <ul class="mission-list">
+        <li>To support and empower Indian artisans by providing a platform to showcase their exceptional work</li>
+        <li>To educate and inspire customers about the rich cultural heritage and traditional techniques behind our products</li>
+        <li>To promote sustainable and ethical business practices that benefit local communities</li>
+        <li>To foster a deeper appreciation for the beauty and diversity of Indian craftsmanship</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

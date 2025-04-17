@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    background:#eee98f;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.logo img{
+    width:100px;
+    height:100px;
+    position: absolute;
+    left: 0;
+    bottom:735px;
+}
+.search-container {
+    display:flex;
+    margin-top: 0px;
+    margin-left: 300px;
+    position: absolute;
+    left:120px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 500px;
+    height:30px;
+    background-color: #eee98f;
+    border-bottom: 0.5px solid;
+    border-top: 0px solid;
+    border-right: 0px solid;
+    border-left: 0px solid;
+    outline: none;}
+.search-container button {
+        padding:0px;
+        height:25px;
+        width:80px;
+        border: none;
+        background-color:#f44336;
+        border:black 2px;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+    
+button:hover {
+        background-color:orangered;}    
+
+.nav-links {
+    list-style:none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    color: black;
+}
+.nav-links li:hover{
+    background-color:transparent;
+    border-color:white;
+    border:2px solid white;
+    border-radius: 3px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+.signin{
+ margin-top: -25px;   
+}
+.signin a:hover{
+    color: black;
+}
+
+.signin a {
+    color: black;
+    font-weight: 700;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Left Side */
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.left-side img {
+    max-width: 90%;
+    height: auto;
+}
+.more-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.more-images img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.more-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.lightbox:target {
+    display: flex;
+}
+.lightbox-content img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* Right Side */
+.right-side {
+    flex: 1;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color:#f7f2cb;
+    position: relative;
+    left:-35px;
+}
+.product-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.money {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.money-strike {
+    color: grey;
+    margin-left: 10px;
+}
+.money-offer {
+    color: crimson;
+    font-size: smaller;
+    margin-left: 10px;
+}
+.MRP-text {
+    color: grey;
+    font-size: small;
+    margin-bottom: 20px;
+}
+
+/* Size Selection */
+.size-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+.size-box1 button, .size-box2 button, .size-box3 button,
+.size-box4 button, .size-box5 button, .size-box6 button {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+    background-color:cornsilk;
+    cursor: pointer;
+    border: 0.5px solid;
+
+}
+.size-box1 button:hover, .size-box2 button:hover, 
+.size-box3 button:hover, .size-box4 button:hover, 
+.size-box5 button:hover, .size-box6 button:hover {
+    background-color:#2f4858;
+    color: white;
+}
+.adding-product{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Buttons */
+.add-to-cart button, .add-to-wishlist button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color:#2f4858;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding:1px;
+    
+}
+
+/* Text */
+.text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Dropdowns */
+.dropdown-container {
+    margin-top: 20px;
+    
+}
+.expandable-dropdown {
+    margin-bottom: 10px;
+    width:500px;
+}
+.dropdown-header {
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 5px;
+}
+.lightbox-content img {
+    max-width: 70%;
+    max-height: 70%;
+}
+.dropdown-content {
+    display: none;
+    padding: 10px;
+}
+.dropdown-content.show {
+    display: block;
+}
+.dropdown-arrow {
+    transition: transform 0.3s;
+    position: absolute;
+    left:530px;
+}
+.dropdown-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .right-side, .left-side {
+        width: 100%;
+        padding: 10px;
+    }
+    .more-images img {
+        width: 80px;
+    }
+}
+.size-guide{
+    position: absolute;
+    left:450px;
+}
+.add-to-cart{
+    position: absolute;
+    left:70px;
+}
+.add-to-wishlist{
+    position: absolute;
+    left:300px;
+}
+.add-to-cart button{
+    width:200px;
+    height:40px;
+
+}
+.add-to-wishlist button{
+    width:200px;
+    height:40px;
+
+}
+.more-images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:0px;
+    margin-top: 10px;
+    width: 92%;
+    position: relative;
+    left:5px;
+}
+footer {
+    background: #eee98f;
+    color: black;
+    
+    padding: 20px 0;
+    margin-top: 30px;
+    
+}
+footer h5 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+footer p, footer a {
+    font-size: 20px;
+    color: rgb(49, 42, 28);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer .social-media a {
+    margin-right: 10px;
+    color: rgb(49, 42, 28);
+    text-decoration: none;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    flex: 1;
+    max-width: 33.3333%;
+    padding: 15px;
+}
+.text-center {
+    text-align: center;
+}
+.close{
+    position: absolute;
+    top: 5px;
+    right: 390px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background-color:black;  
+    padding: 5px; /* add some padding */
+    /* here we added the bg color black and its color white due to different colors of the image to be pasted here */
+
+}
+
+    </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<script src="bootstrap.bundle.min.js" ></script>
+
+<body>
+    <header>
+        <nav>
+            
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <div class="dropdown">
+                 <a class=" dropdown-toggle" data-bs-toggle="dropdown"> &nbsp; Shop</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="" class="dropdown-item">Clothings</a></li>
+                        <li><a href="" class="dropdown-item">Skincare</a></li>
+                        <li><a href="" class="dropdown-item">Books</a></li>
+                        <li><a href="" class="dropdown-item">Cookware</a></li>
+                        <li><a href="" class="dropdown-item">Grocery</a></li>
+                        <li><a href="" class="dropdown-item">Perfumes</a></li>
+                        <li><a href="" class="dropdown-item">Local Handicrafts</a></li>
+                    </ul>
+                </div>
+                
+                
+                <li><a href="bharat-store-about-page (2).html">&nbsp; About</a></li>
+                <li><a href="contact_us_1.html">Contact</a></li>
+            </ul>
+            <div class="search-container" >
+                <input type="text"  id="SearchBox" class="search-bar dropdown-toggle" data-bs-toggle="dropdown" placeholder = "Search for Categories.....">
+                <ul id = "items" class="dropdown-menu">
+                    <li><a href = "" class="dropdown-item">Clothings</a></li>
+                    <li><a href = "" class="dropdown-item">Skincare</a></li>
+                    <li><a href = "" class="dropdown-item">Books</a></li>
+                    <li><a href = "" class="dropdown-item">Cookware</a></li>
+                    <li><a href = "" class="dropdown-item">Grocery</a></li>
+                    <li><a href = "" class="dropdown-item">Perfumes</a></li>
+                    <li><a href = "" class="dropdown-item">Local Handicrafts</a></li>
+                </ul>
+            </div>
+            <div class="signin">
+                
+                <a href="cart.html"><img src="cart.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                <a href="Wishlist.html"><img src="fav.png" alt="wishlist" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                
+                
+                    <a class=" dropdown-toggle" data-bs-toggle="dropdown"><img src="profile.png" alt="cart" height="10%" width="10%" style="margin-bottom:-6px ;"></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" class="dropdown-item">My Orders</a></li>
+                            <li><a href="" class="dropdown-item">Logout</a></li>
+                        
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header><br>
+
+    <div class="container">
+        <!-- Left Side: Product Images -->
+        <div class="left-side">
+            <img src="img1.webp" alt="Product-Image(1)">
+            <div class="more-images">
+                <a href="#lightbox1"><img src="img1.webp" alt="Product-Image(1)"></a>
+                <a href="#lightbox2"><img src="img2.webp" alt="Product-Image(2)"></a>
+                <a href="#lightbox3"><img src="img3.webp" alt="Product-Image(3)"></a>
+                <a href="#lightbox4"><img src="img4.webp" alt="Product-Image(4)"></a>
+                <a href="#lightbox5"><img src="img5.webp" alt="Product-Image(5)"></a>
+            </div>
+
+            <!-- Lightbox Overlays -->
+            <div id="lightbox1" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#" class="close">&times;</a>
+                    <img src="img1.webp" alt="Product-Image(1)">
+                </div>
+            </div>
+            <div id="lightbox2" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#" class="close">&times;</a>
+                    <img src="img2.webp" alt="Product-Image(2)">
+                </div>
+            </div>
+            <div id="lightbox3" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#" class="close">&times;</a>
+                    <img src="img3.webp" alt="Product-Image(3)">
+                </div>
+            </div>
+            <div id="lightbox4" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#" class="close">&times;</a>
+                    <img src="img4.webp" alt="Product-Image(4)">
+                </div>
+            </div>
+            <div id="lightbox5" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#" class="close">&times;</a>
+                    <img src="img5.webp" alt="Product-Image(5)">
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Product Details -->
+        <div class="right-side">
+            <div class="product-name">
+                <strong>Nehru Jacket (Blue)</strong>
+            </div>
+            <div class="money">
+                ₹3270 <span class="money-strike"><strike>₹4400</strike></span>
+                <span class="money-offer">(24% OFF)</span>
+            </div>
+            <div class="MRP-text">MRP (Inclusive of all taxes)</div>
+       
+    
+                <br><br>
+                <div class="size">
+                    <strong>SIZE:</strong>
+                    </div>
+                    <div class="size-boxes">
+                        <div class="size-box1"><button onclick="myFunction1()">XS</button></div>
+                        <div class="size-box2"><button onclick="myFunction2()">S</button></div>
+                        <div class="size-box3"><button onclick="myFunction3()">M</button></div>
+                        <div class="size-box4"><button onclick="myFunction4()">L</button></div>
+                        <div class="size-box5"><button onclick="myFunction5()">XL</button></div>
+                        <div class="size-box6"><button onclick="myFunction6()">2XL</button></div>
+                    </div>
+
+            <br><br>
+
+            <!-- Buttons -->
+            <div class="adding-product">
+                <div class="add-to-cart">
+                    <button onclick="myFunction()">Add to Cart</button>
+                </div>
+                <div class="add-to-wishlist">
+                    <button onclick = "myFunction7()">Add to Wishlist ❤️</button>
+                </div><br><br><br>
+            </div>
+            <div class="text">HANDPICKED STYLES | ASSURED QUALITY</div><br><br>
+
+            <!-- Dropdowns -->
+            <div class="dropdown-container">
+                <div class="expandable-dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown(this)">
+                        Product Origin
+                        <span class="dropdown-arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>Tailored sleeveless coats inspired by Indian politicians’ iconic styles.</li>
+                            <li>Fabric: Cotton Silk or Jute</li>
+                        </ul>
+                    </div>
+                </div><br>
+                <div class="expandable-dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown(this)">
+                        Product Details
+                        <span class="dropdown-arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>Package contains: 1 jacket</li>
+                            <li>Dry Clean</li>
+                            <li>Product Code: 700696773004</li>
+                        </ul>
+                    </div>
+                </div><br>
+                <div class="expandable-dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown(this)">
+                        Best Offers
+                        <span class="dropdown-arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>Best Price: ₹1999</li>
+                            <li>Applicable on: Orders above ₹999 (only on first purchase)</li>
+                            <li>Coupon Code: TBS200</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer >
+        <table border="0" >
+            <tr>
+                <td>
+                    <img src="min.png" alt="Made in India" height="40%" width="45%" style=" margin-right: -80px;">
+                </td>
+                <td>
+                    <img src="Logo21.png" alt="tbs logo"  height="10%" width="45%" >
+                </td>
+                <td  >
+                    <img src="vfl.png" alt="Vocal For Local"  height="120%" width="110%" >
+                </td>
+
+            </tr>
+        </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" >
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" >Home</a></li>
+                        <li><a href="#" >About Us</a></li>
+                        <li><a href="#" >Shop</a></li>
+                        <li><a href="#" >Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>The Bharat Store</h5>
+                    <p>Empowering Local Artisans,
+                        <br> Celebrating Craftsmanship and Handicrafts.</p>
+                </div>
+                
+                <div class="col-md-4" >
+                    <h5>Contact Us</h5>
+                    <p>Email: thebharatstore24@gmail.com</p>
+                    <p>Phone: +91 87568 XXXXX</p>
+                    <div class="social-media">
+                        <a href="#" class=" me-2">Facebook</a>
+                        <a href="#" class=" me-2">Instagram</a>
+                        <a href="#" >Twitter</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <center>
+        <p style="align-content:bottom;  background-color: #9c9a6c;padding: 20px; margin-bottom: -20px;">&copy; 2024 All rights reserved.</p>
+        </center>
+    </footer>
+
+    <script>
+        function myFunction() {
+            alert("Product Added to Cart");
+        }
+        function myFunction1() { alert("XS Size Selected"); }
+        function myFunction2() { alert("S Size Selected"); }
+        function myFunction3() { alert("M Size Selected"); }
+        function myFunction4() { alert("L Size Selected"); }
+        function myFunction5() { alert("XL Size Selected"); }
+        function myFunction6() { alert("2XL Size Selected"); }
+        function myFunction7() { alert ("Product Added To Wishlist")}
+        function toggleDropdown(element) {
+            const content = element.nextElementSibling;
+            const arrow = element.querySelector('.dropdown-arrow');
+            content.classList.toggle('show');
+            arrow.classList.toggle('rotated');
+        }
+        const searchBox = document.getElementById('SearchBox');
+        const itemList = document.getElementById('items');
+        const items = document.getElementsByTagName('li');
+        
+
+    searchBox.addEventListener('input',()=>{
+        const value = searchBox.value.toLowerCase();
+
+        for (const item of items){
+            const text = item.textContent.toLowerCase();
+
+            if (text.includes(value)){
+                item.style.display = "";
+            }
+            else{
+                item.style.display = 'none';
+                removeEventListener=items
+            }
+
+        }
+    })
+    </script>
+</body>
+
+</html>
