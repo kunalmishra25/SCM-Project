@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        .category-side {
+            background-color: khaki;
+            height: 2000px;
+            width: 265px;
+            font-size: 90%;
+        }
+
+        .heading {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .category-list {
+            position: absolute;
+            top: 50px;
+        }
+
+        .product-side {
+            position: absolute;
+            top: 0px;
+            margin-left: 200px;
+            padding-top: 20px;
+
+        }
+
+        .p-s-r-1 {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .p-s-r-1-c-1,
+        .p-s-r-1-c-2,
+        .p-s-r-1-c-3 {
+            border: none;
+            width: 330px;
+            height: 480px;
+            position: relative;
+            box-shadow: 1px 1px 1px 1px grey;
+            transition: transform 0.3s ease;
+        }
+
+        .p-s-r-1-c-1:hover,
+        .p-s-r-1-c-2:hover,
+        .p-s-r-1-c-3:hover {
+            transform: scale(1.05);
+            box-shadow: 2px 2px 5px grey;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 400px;
+        }
+
+        .product-name {
+            text-align: center;
+            font-weight: bolder;
+            font-size: 100%;
+        }
+
+        .rating {
+            display: flex;
+            position: absolute;
+            left: 140px;
+        }
+
+        .price-section {
+            display: flex;
+            position: absolute;
+            top: 450px;
+            left: 80px;
+            gap: 10px;
+        }
+
+        .offer-price {
+            font-weight: bolder;
+        }
+
+        .offer {
+            color: orange;
+            position: absolute;
+            left: 120px;
+            white-space: nowrap;
+        }
+
+        .original-price {
+            color: grey;
+            position: absolute;
+            left: 55px;
+        }
+
+        #list {
+            line-height: 150%;
+        }
+
+        li {
+            position: relative;
+            right: 20px;
+        }
+        #list a{
+            text-decoration: none;
+            color: black;
+
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- <div class="category-side">
+        <div class="head">Categories</div>
+        <div id="list">
+            <ul>
+                <li><a href="#">Clothing</a>
+                    <ul>
+                        <li><a href="#">Nehru Jacket</a></li>
+                        <li><a href="#">Ajrakh kurta</a></li>
+                        <li><a href="#">Banarasi Sherwani</a></li>
+                        <li><a href="#">Pathani Suit</a></li>
+                        <li><a href="#">Kullu Wool Jacket</a></li>
+                        <li><a href="#">Khadi Kurta</a></li>
+                        <li><a href="#">Chikankari Kurti</a></li>
+                        <li><a href="#">Ikart Jacket</a></li>
+                        <li><a href="#">Kashmiri Kaftans</a></li>
+                        <li><a href="#">Khadi Skirts</a></li>
+                        <li><a href="#">Saree</a></li>
+                        <li><a href="#">Kalamkari Dress</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Perfumes</a>
+                    <ul>
+                        <li><a href="#">Forest Rain</a></li>
+                        <li><a href="#">Cosmic Dance</a></li>
+                        <li><a href="#">First Rain</a></li>
+                        <li><a href="#">Rain Kissed Rose</a></li>
+                        <li><a href="#">Into The Woods - Eau de Parfum</a></li>
+                        <li><a href="#">Festive Gift Box</a></li>
+                        <li><a href="#">Mitti Attar</a></li>
+                        <li><a href="#">Saffron Attar</a></li>
+                        <li><a href="#">Noble Spirit Attar</a></li>
+                        <li><a href="#">Zaffar Royal Attar</a></li>
+                        <li><a href="#">Tawakul Royal Attar</a></li>
+                        <li><a href="#">Assorted Luxury Attar - Gift Set</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Cookware</a>
+                    <ul>
+                        <li><a href="#">Masala Dani | Spice Box</a></li>
+                        <li><a href="#">Frypan (Frying Pan)</a></li>
+                        <li><a href="#">Water Dispenser</a></li>
+                        <li><a href="#">Dosa Tawa</a></li>
+                        <li><a href="#">Patili / Degchi</a></li>
+                        <li><a href="#">Tawa</a></li>
+                        <li><a href="#">Thaali Set</a></li>
+                        <li><a href="#">Water Bottle</a></li>
+                        <li><a href="#">Cutlery Gift Box</a></li>
+                        <li><a href="#">Clay Handi</a></li>
+                        <li><a href="#">Clay Kadai</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Books</a>
+                    <ul>
+                        <li><a href="#">Autobiography-Mahatma Gandhi</a></li>
+                        <li><a href="#">The Hidden Hindu</a></li>
+                        <li><a href="#">Mahagatha</a></li>
+                        <li><a href="#">Nationalism</a></li>
+                        <li><a href="#">Ocean of Churn</a></li>
+                        <li><a href="#">You Only Live Once</a></li>
+                        <li><a href="#">One Day Life Will Change</a></li>
+                        <li><a href="#">Samsara-The Valley Of The Gods</a></li>
+                        <li><a href="#">Why I Killed Gandhi</a></li>
+                        <li><a href="#">The Satvic Revolution</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Grocery</a>
+                    <ul>
+                        <li><a href="#">Atta</a></li>
+                        <li><a href="#">Besan</a></li>
+                        <li><a href="#">Bhujia</a></li>
+                        <li><a href="#">Honey</a></li>
+                        <li><a href="#">Refined Oil</a></li>
+                        <li><a href="#">Salt</a></li>
+                        <li><a href="#">SoyaBean</a></li>
+                        <li><a href="#">ToothPaste</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">SkinCare</a>
+                    <ul>
+                        <li><a href="#">Body Oil</a></li>
+                        <li><a href="#">Kajal</a></li>
+                        <li><a href="#">Facial Moisturiser</a></li>
+                        <li><a href="#">Facial Cleansing Balm</a></li>
+                        <li><a href="#">Lip Butter</a></li>
+                        <li><a href="#">Kansa Hair Comb</a></li>
+                        <li><a href="#">Hand and Foot Cream</a></li>
+                        <li><a href="#">Facial Kit</a></li>
+                        <li><a href="#">Body Wash</a></li>
+                        <li><a href="#">Deodrants</a></li>
+                        <li><a href="#">Facial Mask</a></li>
+                        <li><a href="#">Hair Oil</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Local Artwork</a>
+                    <ul>
+                        <li><a href="#">Wooden Dancing Lady</a></li>
+                        <li><a href="#">Painting</a></li>
+                        <li><a href="#">Glass Lamp</a></li>
+                        <li><a href="#">Jali Murra Cut Owl</a></li>
+                        <li><a href="#">Konark Stone Figure</a></li>
+                        <li><a href="#">Kalash / Vase</a></li>
+                        <li><a href="#">Vishnu Avatar</a></li>
+                        <li><a href="#">Devi Chau Mask</a></li>
+                        <li><a href="#">xyz</a></li>
+                        <li><a href="#">xyz</a></li>
+                        <li><a href="#">xyz</a></li>
+                        <li><a href="#">xyz</a></li>
+
+                    </ul>
+        </div>
+    </div> -->
+    <div class="product-side">
+        <!-- Row 1 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="image.png" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+        </div>
+        <!-- Row 3 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+        </div>
+        <!-- Row 4 -->
+        <div class="p-s-r-1">
+            <div class="p-s-r-1-c-1">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-2">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+            <div class="p-s-r-1-c-3">
+                <div class="image-section"><img src="img1.webp" alt="image1"></div>
+                <div class="product-name">Nehru Jacket</div>
+                <div class="rating">
+                    <div class="rating-stars">4⭐</div>
+                    <div class="rating-count">(15)</div>
+                </div>
+                <div class="price-section">
+                    <div class="offer-price">₹1999</div>
+                    <div class="original-price"><strike>₹2850</strike></div>
+                    <div class="offer">(30%) OFF</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
