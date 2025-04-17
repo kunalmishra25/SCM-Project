@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        *{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    
+}
+.left-side{
+    position:relative;
+    left:40px;
+    top :50px;
+}
+.right-side{
+    background-color:cornsilk;
+    height:663px;
+    width:50%;
+    position:relative;
+    left:600px;
+    bottom:637px;
+    border:none
+    padding-bottom: 20px;
+}
+.product-name{
+    font-size: x-large;
+    position:relative;
+    left: 30px;
+    top:20px;
+}
+.money{
+    position:relative;
+    top:25px;
+    left:31px;
+    font-size: larger;
+}
+.money-strike{
+    color:grey;
+    position:relative;
+    bottom:23px;
+    left:60px;
+}
+.money-offer{
+    color: crimson;
+    position:relative;
+    bottom:44px;
+    left:120px;
+    font-size:smaller;
+}
+.MRP-text{
+    color: grey;
+    font-size:small;
+    position:relative;
+    left:30px;
+    bottom:10px;
+}
+.size{
+    position:relative;
+    left:30px;
+}
+.size-guide{
+    font-size:smaller;
+    position: relative;
+    bottom:35px;
+    left:500px;
+    color: black;
+}
+.size-boxes{
+    display:flex;
+    width:75%;
+    justify-content: space-between;
+    gap:5px;
+}
+.size-box1, .size-box2, .size-box3, .size-box4, .size-box5, .size-box6 {
+    border:1px solid black;
+    height:40px;
+    width:40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.adding-product{
+    display:flex;
+}
+.add-to-cart{
+    position :relative;
+    left:50px;
+    top:60px;
+}
+.add-to-cart button{
+    width:250px;
+    height:35px;
+    background-color:rgb(255, 69, 69);
+    font-weight:bolder;
+}
+.add-to-wishlist{
+    position:relative;
+    top:60px;
+    left:70px;
+}
+.add-to-wishlist button{
+    width:250px;
+    height:35px;
+    font-weight: bolder;
+}
+.text{
+    position:relative;
+    top:70px;
+    left:200px;
+    font-size: small;
+    color:black;
+    font-weight: bolder;
+}
+.size-box1 button, .size-box2 button, .size-box3 button, 
+.size-box4 button, .size-box5 button, .size-box6 button {
+    height:40px;
+    width:40px;
+    background-color: cornsilk;
+    border:none;
+}
+.dropdown-container {
+    position: relative;
+    top: 80px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    background-color: cornsilk;
+}
+.expandable-dropdown {
+    border: 1px solid cornsilk;
+    margin-bottom: 10px;
+}
+.dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color:cornsilk;
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    padding: 10px;
+    background-color:cornsilk;
+}
+.dropdown-content.show {
+    display: block;
+}
+.dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+.dropdown-arrow.rotated {
+    transform: rotate(180deg);
+}
+.suggestions{
+    width:93%;
+    height:200px;
+    border:1px solid black;
+
+
+}
+.more-images{
+    display: flex;
+    position: absolute;
+    top:745px;
+    left:25px;
+    justify-content: space-between;
+    gap:2px;
+
+}
+/* Lightbox Container */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Show Lightbox on Target */
+.lightbox:target {
+    display: flex;
+}
+
+/* Lightbox Content */
+.lightbox-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #f1c40f;
+}
+.more-images img:hover{
+    transform:scale(1.05);
+    filter: drop-shadow(4px 4px 4px cornsilk);}
+    /* Lightbox for Size Guide */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.lightbox .close {
+    position: absolute;
+    top:0px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.lightbox .close:hover {
+    color: black;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img src="img1.webp" alt="Product-Image(1)" height="100%" width="40%"></div>
+            <div class="more-images">
+                <a href="#lightbox1"><img src="img1.webp" alt="Product-Image(1)" height="120px" width="120px"></a>
+                <a href="#lightbox2"><img src="img2.webp" alt="Product-Image(2)" height="120px" width="120px"></a>
+                <a href="#lightbox3"><img src="img3.webp" alt="Product-Image(3)" height="120px" width="120px"></a>
+                <a href="#lightbox4"><img src="img4.webp" alt="Product-Image(4)" height="120px" width="120px"></a>
+                <a href="#lightbox5"><img src="img5.webp" alt="Product-Image(5)" height="120px" width="120px"></a>
+            </div>
+            
+            <!-- Lightbox Overlays -->
+            <div id="lightbox1" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#" class="close">&times;</a>
+                    <img src="img1.webp" alt="Product-Image(1)">
+                </div>
+            </div>
+            <div id="lightbox2" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#" class="close">&times;</a>
+                    <img src="img2.webp" alt="Product-Image(2)">
+                </div>
+            </div>
+            <div id="lightbox3" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#" class="close">&times;</a>
+                    <img src="img3.webp" alt="Product-Image(3)">
+                </div>
+            </div>
+            <div id="lightbox4" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#" class="close">&times;</a>
+                    <img src="img4.webp" alt="Product-Image(4)">
+                </div>
+            </div>
+            <div id="lightbox5" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#" class="close">&times;</a>
+                    <img src="img5.webp" alt="Product-Image(5)">
+                </div>
+            </div>
+        <div class="right-side">
+            <div class="product-name">
+                <strong>Nehru Jacket (Blue)</strong>
+            </div>
+            <div class="money">
+                ₹3270 <div class="money-strike"><strike>₹4400</strike></div>
+                <div class="money-offer">(28% OFF)</div>
+            </div>
+            <div class="MRP-text">MRP(Inclusive of all taxes)</div>
+            <br><br>
+            <div class="size"><strong>SIZE:</strong><br><br><br>
+                <div class="size-guide">
+                    <a href="#size-guide-lightbox">SIZE GUIDE</a>
+                </div>
+                <!-- Lightbox for Size Guide -->
+                <div id="size-guide-lightbox" class="lightbox">
+                    <div class="lightbox-content">
+                        <a href="#" class="close">&times;</a>
+                        <img src="size_guide.png" alt="Size Guide">
+                    </div>
+                </div>
+                
+                <div class="size-boxes">
+                    <div class="size-box1"><button onclick="myFunction1()">XS</button></div>
+                    <div class="size-box2"><button onclick="myFunction2()">S</button></div>
+                    <div class="size-box3"><button onclick="myFunction3()">M</button></div>
+                    <div class="size-box4"><button onclick="myFunction4()">L</button></div>
+                    <div class="size-box5"><button onclick="myFunction5()">XL</button></div>
+                    <div class="size-box6"><button onclick="myFunction6()">2XL</button></div>
+                </div>
+            </div>
+            <div class="adding-product">
+                <div class="add-to-cart">
+                    <button onclick="myFunction()">Add to Cart</button>
+                </div>
+                <div class="add-to-wishlist">
+                    <button>Add to Wishlist ❤️ </button>
+                </div>
+            </div>
+            <div class="text">HANDPICKED STYLES | ASSURED STYLES</div>
+            <div class="dropdown-container">
+                <div class="expandable-dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown(this)">
+                        Product Origin
+                        <span class="dropdown-arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                        <li>Tailored sleeveless coats inspired by Indian politicians’ iconic styles.</li>
+                        <li>Fabric: Cotton Silk or Jute</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="expandable-dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown(this)">
+                        Product Details
+                        <span class="dropdown-arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                           <li>Package contains: 1 jacket</li>
+                           <li>Dry Clean</li>
+                           <li>Product Code: 700696773004</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="expandable-dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown(this)">
+                        BEST OFFERS
+                        <span class="dropdown-arrow">▼</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            Best Price:Rs.1999
+                            <li>Applicable on: Orders above Rs. 999 (only on first purchase)</li>
+                            <li>Coupon code: TBS200</li>
+                            <li>Coupon Discount: Rs. 200 off (check cart for final savings)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div class = "suggestions">
+            
+        </div>
+    </div>
+
+    <script>
+    function myFunction() {
+        alert("Select a size to add to cart");
+    }
+    function myFunction1() {
+        alert("XS Size Selected");
+    }
+    function myFunction2() {
+        alert("S Size Selected");
+    }
+    function myFunction3() {
+        alert("M Size Selected");
+    }
+    function myFunction4() {
+        alert("L Size Selected");
+    }
+    function myFunction5() {
+        alert("XL Size Selected");
+    }
+    function myFunction6() {
+        alert("2XL Size Selected");
+    }
+
+    function toggleDropdown(element) {
+        const content = element.nextElementSibling;
+        const arrow = element.querySelector('.dropdown-arrow');
+        
+        content.classList.toggle('show');
+        arrow.classList.toggle('rotated');
+    }
+    </script>
+</body>
+</html>
